@@ -11,7 +11,9 @@
     <header class="site-header">
         <nav class="navbar" aria-label="Primary">
             <div class="nav-container">
-                <a href="index.html" class="nav-logo">Smart Vision Aid</a>
+                <a href="index.html" class="nav-logo">
+                    <img src="logo.png" alt="Smart Vision Aid Logo" class="logo-icon">
+                </a>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="problem.html" class="nav-link active">Problem</a></li>
@@ -28,37 +30,35 @@
     <main id="main-content">
         <section class="page-slide">
             <div class="content-center">
-                <div class="layered-section reveal-up">
-                    <div class="architectural-grid">
-                        <!-- Title Section -->
-                        <div class="grid-col-12">
-                            <h1 class="display-title">The Challenge</h1>
-                            <p class="display-subtitle">285 million people worldwide navigate a world not designed for them. The core challenge is not just impaired vision, but the loss of independent agency.</p>
-                        </div>
+                <div class="architectural-grid">
+                    <!-- Title Section -->
+                    <div class="grid-col-12 reveal-up">
+                        <h1 class="display-title">The Challenge</h1>
+                        <p class="display-subtitle">285 million people worldwide navigate a world not designed for them. The core challenge is not just impaired vision, but the loss of independent agency.</p>
+                    </div>
 
-                        <!-- Problem Grid -->
-                        <div class="grid-col-12" style="margin-top: 2rem;">
-                            <div class="architectural-grid focus-grid">
-                                <article class="grid-col-6 content-node reveal-up delay-100">
-                                    <h3>Navigation Difficulties</h3>
-                                    <p>Unfamiliar environments pose constant risks. Collisions with obstacles, uneven surfaces, and traffic create a perpetual mental load for the user.</p>
-                                </article>
-                                
-                                <article class="grid-col-6 content-node reveal-up delay-200">
-                                    <h3>Information Access</h3>
-                                    <p>Essential information—signs, menus, documents—remains locked behind a visual wall, requiring constant third-party assistance to decode.</p>
-                                </article>
-                                
-                                <article class="grid-col-6 content-node reveal-up delay-300">
-                                    <h3>Limited Independence</h3>
-                                    <p>Reliance on others for simple daily tasks erodes autonomy. The inability to move freely without a guide restricts personal freedom.</p>
-                                </article>
-                                
-                                <article class="grid-col-6 content-node reveal-up delay-400">
-                                    <h3>Social Isolation</h3>
-                                    <p>The difficulty in recognizing faces and reading social cues creates an invisible barrier to participation in community life.</p>
-                                </article>
-                            </div>
+                    <!-- Problem Grid -->
+                    <div class="grid-col-12">
+                        <div class="architectural-grid focus-grid">
+                            <article class="grid-col-6 minimal-card reveal-up delay-100">
+                                <h3>Navigation Difficulties</h3>
+                                <p>Unfamiliar environments pose constant risks. Collisions with obstacles, uneven surfaces, and traffic create a perpetual mental load for the user.</p>
+                            </article>
+                            
+                            <article class="grid-col-6 minimal-card reveal-up delay-200">
+                                <h3>Information Access</h3>
+                                <p>Essential information—signs, menus, documents—remains locked behind a visual wall, requiring constant third-party assistance to decode.</p>
+                            </article>
+                            
+                            <article class="grid-col-6 minimal-card reveal-up delay-300">
+                                <h3>Limited Independence</h3>
+                                <p>Reliance on others for simple daily tasks erodes autonomy. The inability to move freely without a guide restricts personal freedom.</p>
+                            </article>
+                            
+                            <article class="grid-col-6 minimal-card reveal-up delay-300">
+                                <h3>Social Isolation</h3>
+                                <p>The difficulty in recognizing faces and reading social cues creates an invisible barrier to participation in community life.</p>
+                            </article>
                         </div>
                     </div>
                 </div>
@@ -66,6 +66,8 @@
         </section>
     </main>
 
+    <script src="eye-animation.js"></script>
+    <script src="script.js"></script>
     <script src="spa-router.js"></script>
     <script>
         // Trigger animations on load

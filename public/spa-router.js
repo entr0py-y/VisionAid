@@ -40,6 +40,9 @@
       
       // Push initial state
       history.replaceState({ page: this.currentPage }, document.title, window.location.href);
+      
+      // Initialize scripts for the current page (Next buttons, animations, etc.)
+      this.reinitializeScripts();
     },
     
     getPageFromPath(path) {
@@ -320,6 +323,12 @@
         const docEl = document.documentElement;
         let hasTriggered = false;
         
+        // Safety check: specific to short pages
+        // If the page is barely scrollable (fits mostly in viewport), do NOT enable auto-scroll.
+        if (docEl.scrollHeight <= window.innerHeight + 100) {
+            return; // Exit, only manual click allowed
+        }
+        
         this._scrollNavHandler = () => {
             if (hasTriggered) return;
             
@@ -327,8 +336,8 @@
             const innerHeight = window.innerHeight;
             const docHeight = docEl.scrollHeight;
             
-            // Trigger at 85% of page height
-            if ((scrollY + innerHeight) >= docHeight * 0.85) {
+            // Trigger at 90% of page height, but only if user has actually scrolled
+            if (scrollY > 30 && (scrollY + innerHeight) >= docHeight * 0.90) {
                 hasTriggered = true;
                 
                 // Remove listener immediately (one-time trigger)

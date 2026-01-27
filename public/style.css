@@ -2855,11 +2855,10 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertical alignment */
-    align-items: center;    /* Horizontal alignment */
-    padding-top: 80px; 
+    padding-top: 80px; /* Header clearance */
     position: relative;
-    overflow: hidden;
+    opacity: 1; /* Safe default */
+    transform: none; /* Safe default */
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
@@ -2879,12 +2878,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Center children horizontally */
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
-    padding: 3rem 2rem;
-    text-align: center; /* Default text center for 'middle' feel */
+    padding: 2rem 2rem 10vh 2rem;
 }
 
 /* Architectural Grid */
@@ -2912,25 +2909,23 @@ body {
 /* Typography Enhancements */
 .display-title {
     font-size: clamp(2.5rem, 5vw, 4.5rem);
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -0.04em;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    padding-bottom: 0.2em;
+    margin-bottom: 0.5rem;
     background: linear-gradient(to bottom, var(--text-primary), var(--text-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-align: center;
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1));
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3)); /* Glow for gradient text */
 }
 
 .display-subtitle {
-    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
     color: var(--text-secondary);
-    max-width: 700px;
-    margin: 0 auto 3rem auto; /* Centered with bottom margin */
-    line-height: 1.6;
-    text-align: center;
+    max-width: 60ch;
+    margin-bottom: 3rem;
     font-weight: 300;
     letter-spacing: -0.01em;
 }
@@ -3192,10 +3187,8 @@ body {
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 28px;
-    padding: 60px;
-    margin: 2rem auto; /* Centered margin */
-    max-width: 1100px;
-    width: calc(100% - 4rem);
+    padding: 48px;
+    margin: var(--space-xl) 0;
     box-shadow: var(--glass-inner-glow), 0 8px 32px rgba(0, 0, 0, 0.3);
     transition: all var(--transition-smooth);
 }
@@ -3278,8 +3271,8 @@ body {
 .page-slide {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
-                transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 1500ms cubic-bezier(0.4, 0, 0.2, 1),
+                transform 1500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .page-slide.visible {
@@ -3348,7 +3341,7 @@ body {
 .reveal-up {
     opacity: 1; /* Safe default */
     transform: none; /* Safe default */
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 1.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal-up.animate-in {

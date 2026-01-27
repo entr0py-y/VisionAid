@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Technical Details and Solution Architecture">
-    <title>The Solution - Smart Vision Aid</title>
+    <meta name="description" content="Our Proposed Solution - AI-powered wearable assistive device">
+    <title>Our Solution - Smart Vision Aid</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
         <nav class="navbar" aria-label="Primary">
             <div class="nav-container">
                 <a href="index.html" class="nav-logo">
-                    <img src="logo.png" alt="Smart Vision Aid Logo" class="logo-icon" />
+                    <img src="logo.png" alt="Smart Vision Aid Logo" class="logo-icon">
                 </a>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
@@ -30,49 +30,117 @@
     <main id="main-content">
         <section class="page-slide">
             <div class="content-center">
-                <div class="layered-section reveal-up">
-                    <div class="architectural-grid">
-                        <div class="grid-col-12">
-                            <h1 class="display-title">The Solution</h1>
-                            <p class="display-subtitle">An intelligent wearable that translates the physical world into audio context. A seamless fusion of computer vision, sensors, and cognitive AI.</p>
-                        </div>
+                <div class="architectural-grid">
+                    <!-- Intro Section (Left) -->
+                    <div class="grid-col-6 reveal-up">
+                        <h1 class="display-title">The Solution</h1>
+                        <p class="display-subtitle">An intelligent wearable that translates the physical world into audio context. A seamless fusion of computer vision, sensors, and cognitive AI.</p>
                         
-                        <div class="grid-col-12" style="margin-top: 3rem;">
-                            <div class="architectural-grid">
+                        <div style="margin-top: 4rem;">
+                            <article class="minimal-card" style="border-top: none; padding-top: 0; padding-bottom: 2rem;">
+                                <h3>Hands-Free Awareness</h3>
+                                <p>Designed as a non-intrusive headset, leaving hands completely free for a cane or other tasks.</p>
+                            </article>
+                            <article class="minimal-card" style="border-top: none; padding-top: 0; padding-bottom: 2rem;">
+                                <h3>Real-Time Perception</h3>
+                                <p>Latency-free object detection and obstacle warnings powered by edge computing.</p>
+                            </article>
+                            <article class="minimal-card" style="border-top: none; padding-top: 0;">
+                                <h3>Contextual Audio</h3>
+                                <p>Bone conduction technology delivers clear verbal descriptions without blocking ambient sound.</p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Technical Specs (Right) -->
+                    <div class="grid-col-6 reveal-up delay-200" style="border-left: 1px solid var(--border-light); padding-left: 3rem;">
+                        <div style="margin-bottom: 3rem;">
+                            <h4 style="font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.5rem;">Hardware Architecture</h4>
+                            <div class="architectural-grid focus-grid" style="gap: 1rem;">
                                 <div class="grid-col-6">
-                                    <article class="content-node reveal-up delay-100">
-                                        <h3>Hands-Free Awareness</h3>
-                                        <p>Designed as a non-intrusive headset, leaving hands completely free for a cane or other tasks.</p>
-                                    </article>
-                                    <article class="content-node reveal-up delay-200" style="margin-top: 2rem;">
-                                        <h3>Real-Time Processing</h3>
-                                        <p>Low-latency spatial mapping ensures the user receives feedback within milliseconds of movement.</p>
-                                    </article>
+                                    <div class="hw-card">
+                                        <div>
+                                            <h5>Camera Module</h5>
+                                            <p>High-definition Wide Angle</p>
+                                        </div>
+                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="hw-icon">
+                                            <rect x="4" y="8" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                                            <circle cx="14" cy="15" r="4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                                            <circle cx="14" cy="15" r="1.5" fill="currentColor"/>
+                                            <rect x="20" y="11" width="2" height="2" fill="currentColor"/>
+                                        </svg>
+                                    </div>
                                 </div>
                                 <div class="grid-col-6">
-                                    <article class="content-node reveal-up delay-300">
-                                        <h3>Cognitive Audio</h3>
-                                        <p>Not just raw data—the device provides semantic descriptions (e.g., 'A chair is 2 meters ahead').</p>
-                                    </article>
-                                    <article class="content-node reveal-up delay-400" style="margin-top: 2rem;">
-                                        <h3>Edge Computing</h3>
-                                        <p>Runs neural networks locally to maintain privacy and function without a stable internet connection.</p>
-                                    </article>
+                                    <div class="hw-card">
+                                        <div>
+                                            <h5>Processing Unit</h5>
+                                            <p>Raspberry Pi 4 / Jetson</p>
+                                        </div>
+                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="hw-icon">
+                                            <rect x="5" y="6" width="18" height="16" rx="1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                                            <line x1="9" y1="10" x2="19" y2="10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                                            <line x1="9" y1="14" x2="15" y2="14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                                            <line x1="9" y1="18" x2="17" y2="18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                                            <circle cx="19" cy="16" r="1.5" fill="currentColor"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="grid-col-6">
+                                    <div class="hw-card">
+                                        <div>
+                                            <h5>Distance Sensors</h5>
+                                            <p>Ultrasonic & LiDAR</p>
+                                        </div>
+                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="hw-icon">
+                                            <path d="M8 14 L11 14 L11 10 L17 10 L17 14 L20 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <line x1="14" y1="10" x2="14" y2="6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                                            <line x1="8" y1="14" x2="8" y2="22" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                                            <line x1="20" y1="14" x2="20" y2="22" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                                            <line x1="5" y1="14" x2="23" y2="14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="grid-col-6">
+                                    <div class="hw-card">
+                                        <div>
+                                            <h5>Feedback</h5>
+                                            <p>Bone Conduction Audio</p>
+                                        </div>
+                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="hw-icon">
+                                            <path d="M6 14 C6 14, 8 11, 10 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+                                            <path d="M4 14 C4 14, 7 9, 10 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+                                            <path d="M18 14 C18 14, 20 11, 22 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+                                            <path d="M18 14 C18 14, 21 9, 24 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+                                            <line x1="11" y1="14" x2="17" y2="14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div style="margin-top: 4rem; text-align: center;">
-                        <a href="features.html" class="nav-link" style="font-weight: 600; opacity: 0.6; font-size: 0.9rem;">Discover the Features →</a>
+
+                        <div>
+                            <h4 style="font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.5rem;">Software Stack</h4>
+                            <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                                <li style="border-bottom: 1px solid var(--border-light); padding: 0.5rem 0; font-family: 'Space Mono', monospace; font-size: 0.9rem;">OpenCV Vision</li>
+                                <li style="border-bottom: 1px solid var(--border-light); padding: 0.5rem 0; font-family: 'Space Mono', monospace; font-size: 0.9rem;">YOLOv5 Detection</li>
+                                <li style="border-bottom: 1px solid var(--border-light); padding: 0.5rem 0; font-family: 'Space Mono', monospace; font-size: 0.9rem;">Tesseract OCR</li>
+                                <li style="border-bottom: 1px solid var(--border-light); padding: 0.5rem 0; font-family: 'Space Mono', monospace; font-size: 0.9rem;">Google TTS</li>
+                                <li style="border-bottom: 1px solid var(--border-light); padding: 0.5rem 0; font-family: 'Space Mono', monospace; font-size: 0.9rem;">TensorFlow Lite</li>
+                                <li style="border-bottom: 1px solid var(--border-light); padding: 0.5rem 0; font-family: 'Space Mono', monospace; font-size: 0.9rem;">Python Core</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <script src="eye-animation.js"></script>
+    <script src="script.js"></script>
     <script src="spa-router.js"></script>
     <script>
+        // Trigger animations on load
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.reveal-up').forEach((el, index) => {
                 setTimeout(() => {

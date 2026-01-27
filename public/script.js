@@ -7,8 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // ========================
   // INTERACTIVE EYE BACKGROUND
   // ========================
-  if (typeof EyeController !== 'undefined') {
-      new EyeController();
+  // ========================
+  // INTERACTIVE EYE BACKGROUND
+  // ========================
+  if (typeof EyeController !== 'undefined' && document.getElementById('eye-canvas')) {
+      if (!window.currentEyeController) {
+          window.currentEyeController = new EyeController();
+      }
   }
 
   // ========================
