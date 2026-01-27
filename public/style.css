@@ -376,8 +376,11 @@ a:hover {
 
 .logo-icon {
     width: 100px;
+    min-width: 100px;
     height: auto;
+    min-height: 40px;
     object-fit: contain;
+    display: block; /* Added display: block as per Code Edit */
     border-radius: 4px;
     transition: filter 0.3s ease;
 }
@@ -2881,7 +2884,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
-    padding: 2rem 2rem 10vh 2rem;
+    padding: 2rem 2rem 5vh 2rem;
 }
 
 /* Architectural Grid */

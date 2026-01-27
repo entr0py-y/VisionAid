@@ -46,8 +46,9 @@
     },
     
     getPageFromPath(path) {
-      const pageName = path.split('/').pop() || 'index.html';
-      return pageName === '' ? 'index.html' : pageName;
+      const fileName = path.split('/').pop() || 'index.html';
+      if (fileName === '' || fileName === 'index') return 'index.html';
+      return fileName.includes('.') ? fileName : fileName + '.html';
     },
     
     bindNavigation() {
@@ -264,8 +265,8 @@
         document.querySelectorAll('.overview-card, .problem-card').forEach(window.addTiltEffect);
       }
       
-      // Initialize Next Section Indicator (delay to appear after page transition)
-      setTimeout(() => this.initNextIndicator(), 500);
+      // Initialize Next Section Indicator immediately
+      this.initNextIndicator();
       
       // Dispatch custom event for other scripts to listen to
       document.dispatchEvent(new CustomEvent('spa-page-loaded', { 
@@ -323,11 +324,8 @@
         const docEl = document.documentElement;
         let hasTriggered = false;
         
-        // Safety check: specific to short pages
-        // If the page is barely scrollable (fits mostly in viewport), do NOT enable auto-scroll.
-        if (docEl.scrollHeight <= window.innerHeight + 100) {
-            return; // Exit, only manual click allowed
-        }
+        // Safety check: only add listener if we're not already at bottom
+        // (Removing the short-page restriction that caused buttons to disappear)
         
         this._scrollNavHandler = () => {
             if (hasTriggered) return;
