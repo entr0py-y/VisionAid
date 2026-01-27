@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Understanding the challenges faced by visually impaired people">
+    <title>The Problem - Smart Vision Aid</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar" aria-label="Primary">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">Smart Vision Aid</a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="problem.html" class="nav-link active">Problem</a></li>
+                    <li><a href="solution.html" class="nav-link">Solution</a></li>
+                    <li><a href="features.html" class="nav-link">Features</a></li>
+                    <li><a href="impact.html" class="nav-link">Impact</a></li>
+                    <li><a href="team.html" class="nav-link">Team</a></li>
+                </ul>
+                <button type="button" id="settings-toggle" class="settings-toggle" aria-label="Settings"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="page-slide">
+            <div class="content-center">
+                <div class="architectural-grid">
+                    <!-- Title Section -->
+                    <div class="grid-col-12 reveal-up">
+                        <h1 class="display-title">The Challenge</h1>
+                        <p class="display-subtitle">285 million people worldwide navigate a world not designed for them. The core challenge is not just impaired vision, but the loss of independent agency.</p>
+                    </div>
+
+                    <!-- Problem Grid -->
+                    <div class="grid-col-12">
+                        <div class="architectural-grid focus-grid">
+                            <article class="grid-col-6 minimal-card reveal-up delay-100">
+                                <h3>Navigation Difficulties</h3>
+                                <p>Unfamiliar environments pose constant risks. Collisions with obstacles, uneven surfaces, and traffic create a perpetual mental load for the user.</p>
+                            </article>
+                            
+                            <article class="grid-col-6 minimal-card reveal-up delay-200">
+                                <h3>Information Access</h3>
+                                <p>Essential information—signs, menus, documents—remains locked behind a visual wall, requiring constant third-party assistance to decode.</p>
+                            </article>
+                            
+                            <article class="grid-col-6 minimal-card reveal-up delay-300">
+                                <h3>Limited Independence</h3>
+                                <p>Reliance on others for simple daily tasks erodes autonomy. The inability to move freely without a guide restricts personal freedom.</p>
+                            </article>
+                            
+                            <article class="grid-col-6 minimal-card reveal-up delay-300">
+                                <h3>Social Isolation</h3>
+                                <p>The difficulty in recognizing faces and reading social cues creates an invisible barrier to participation in community life.</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="spa-router.js"></script>
+    <script>
+        // Trigger animations on load
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.reveal-up').forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add('active');
+                }, index * 100);
+            });
+            document.querySelector('.page-slide').classList.add('visible');
+        });
+        
+        // Setup re-trigger for SPA
+        document.addEventListener('spa-page-loaded', () => {
+             document.querySelectorAll('.reveal-up').forEach((el, index) => {
+                el.classList.remove('active');
+                setTimeout(() => {
+                    el.classList.add('active');
+                }, index * 100);
+            });
+            const slide = document.querySelector('.page-slide');
+            if(slide) slide.classList.add('visible');
+        });
+    </script>
+</body>
+</html>

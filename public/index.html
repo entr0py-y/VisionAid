@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Smart Wearable Assistive Device for Visually Impaired People - An AI-powered solution for independent navigation"
+    />
+    <title>Smart Wearable Assistive Device for Visually Impaired</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <!-- Navigation -->
+      <nav class="navbar" aria-label="Primary">
+        <div class="nav-container">
+          <a href="index.html" class="nav-logo">Smart Vision Aid</a>
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="problem.html" class="nav-link">Problem</a></li>
+            <li><a href="solution.html" class="nav-link">Solution</a></li>
+            <li><a href="features.html" class="nav-link">Features</a></li>
+            <li><a href="impact.html" class="nav-link">Impact</a></li>
+            <li><a href="team.html" class="nav-link">Team</a></li>
+          </ul>
+          <button
+            type="button"
+            id="settings-toggle"
+            class="settings-toggle"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+            aria-controls="settings-panel"
+            aria-label="Settings"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+          </button>
+        </div>
+
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <!-- Hero Section -->
+      <section
+        id="home"
+        class="hero hero-fullpage"
+        role="region"
+        aria-labelledby="hero-title"
+        aria-label="Overview"
+      >
+        <div class="hero-background">
+          <canvas id="eye-canvas"></canvas>
+          <div class="hero-gradient"></div>
+        </div>
+        <div class="container">
+          <div class="hero-content">
+
+            <h1 class="display-title" style="margin-bottom: 0.5rem; font-size: clamp(1.75rem, 3.5vw, 3.15rem); opacity: 0; animation: heroRevealTitle 1.8s cubic-bezier(0.25, 1, 0.3, 1) forwards;">Vision Aid</h1>
+            <h1 id="hero-title" class="hero-title" style="opacity: 0; animation: heroReveal 1.8s cubic-bezier(0.25, 1, 0.3, 1) 0.2s forwards;">
+              Smart Wearable Assistive Device for Visually Impaired People
+            </h1>
+
+            <div class="hero-cta-group" style="opacity: 0; animation: heroReveal 1.8s cubic-bezier(0.25, 1, 0.3, 1) 0.4s forwards;">
+              <a
+                href="problem.html"
+                class="cta-button primary"
+                aria-label="Learn about the problem"
+                >Understand the Problem</a
+              >
+              <a
+                href="solution.html"
+                class="cta-button secondary"
+                aria-label="Explore the proposed solution"
+                >Explore the Solution</a
+              >
+            </div>
+
+          </div>
+        </div>
+        <div class="scroll-indicator" style="opacity: 0; animation: heroRevealCenter 1.8s cubic-bezier(0.25, 1, 0.3, 1) 1.0s forwards;">
+          <span>Scroll to explore</span>
+          <div class="scroll-arrow"></div>
+        </div>
+
+
+      <!-- Floating Theme Toggle for Hero -->
+
+      </section>
+
+      <!-- Floating Theme Toggle (Bottom Left) -->
+      <button type="button" class="theme-switch fixed-bottom-left" aria-label="Toggle theme">
+        <span class="theme-switch-icons">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </span>
+      </button>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p class="footer-title">
+            Smart Wearable Assistive Device for Visually Impaired People
+          </p>
+          <p class="footer-subtitle">College Major Project &mdash; 2026</p>
+          <p class="footer-note">
+            A student initiative for social impact through technology
+          </p>
+          <p class="accessibility-note">
+            This website is designed with accessibility and ease-of-use in mind
+            for visually impaired users.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="eye-animation.js"></script>
+    <script src="script.js"></script>
+    <script src="spa-router.js"></script>
+    
+    <!-- Scroll to navigate to Problem page -->
+    <script>
+    (function() {
+      'use strict';
+      
+      // Only run on homepage
+      if (window.location.pathname !== '/' && !window.location.pathname.endsWith('index.html')) return;
+      
+      const mainContent = document.getElementById('main-content');
+      let hasNavigated = false;
+      let scrollTimeout = null;
+      
+      // Detect scroll down and navigate to problem page
+      function handleScroll(e) {
+        if (hasNavigated) return;
+        if (document.body.classList.contains('panel-open')) return;
+        
+        const scrollTop = mainContent ? mainContent.scrollTop : (window.scrollY || window.pageYOffset);
+        
+        // If scrolled more than 100px, navigate to problem
+        if (scrollTop > 100) {
+          hasNavigated = true;
+          
+          // Use SPA router if available
+          if (window.SpaRouter && window.SpaRouter.loadPage) {
+            window.SpaRouter.loadPage('problem.html', true);
+          } else {
+            window.location.href = 'problem.html';
+          }
+        }
+      }
+      
+      // Also handle wheel event for smoother detection
+      function handleWheel(e) {
+        if (hasNavigated) return;
+        if (document.body.classList.contains('panel-open')) return;
+        
+        // Scrolling down
+        if (e.deltaY > 30) {
+          hasNavigated = true;
+          
+          if (window.SpaRouter && window.SpaRouter.loadPage) {
+            window.SpaRouter.loadPage('problem.html', true);
+          } else {
+            window.location.href = 'problem.html';
+          }
+        }
+      }
+      
+      // Add listeners
+      if (mainContent) {
+        mainContent.addEventListener('scroll', handleScroll, { passive: true });
+      }
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      window.addEventListener('wheel', handleWheel, { passive: true });
+      
+      // Reset on SPA navigation back to home
+      document.addEventListener('spa-page-loaded', function(e) {
+        if (e.detail && e.detail.page === 'index.html') {
+          hasNavigated = false;
+        }
+      });
+    })();
+    </script>
+  </body>
+</html>
