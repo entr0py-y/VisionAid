@@ -82,6 +82,14 @@ document.addEventListener("DOMContentLoaded", () => {
           this.setTheme(e.matches ? 'dark' : 'light', false);
         }
       });
+
+      // Global Theme Toggle Listener (Independent of Settings Panel)
+      document.addEventListener('click', (e) => {
+        const toggleBtn = e.target.closest('.theme-switch');
+        if (toggleBtn) {
+          this.toggle();
+        }
+      });
     },
     
     setTheme(theme, save = true) {
@@ -97,10 +105,11 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem(this.STORAGE_KEY, theme);
       }
       
-      // Update switch state
+      // Update ALL switch states in the DOM (including floating and settings switches)
       const themeSwitches = document.querySelectorAll('.theme-switch');
       themeSwitches.forEach(themeSwitch => {
         themeSwitch.classList.toggle('is-light', theme === 'light');
+        themeSwitch.setAttribute('aria-pressed', theme === 'light');
       });
       
       // Dispatch custom event
@@ -128,8 +137,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Fix: Re-sync theme toggle state on SPA page load
   document.addEventListener('spa-page-loaded', () => {
-    const currentTheme = ThemeManager.getCurrentTheme();
-    ThemeManager.setTheme(currentTheme, false);
+    // Small delay to ensure all new DOM elements are fully rendered
+    setTimeout(() => {
+      const currentTheme = ThemeManager.getCurrentTheme();
+      ThemeManager.setTheme(currentTheme, false);
+    }, 50);
   });
 
   // ========================
@@ -286,18 +298,10 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     
     setupThemeToggle() {
-      // Create a global handler
+      // Create a global handler (kept for compatibility if needed elsewhere)
       window._themeToggleHandler = function() {
         ThemeManager.toggle();
       };
-      
-      // Use event delegation for robustness
-      document.addEventListener('click', (e) => {
-        const toggleBtn = e.target.closest('.theme-switch');
-        if (toggleBtn) {
-          window._themeToggleHandler();
-        }
-      });
     },
     
     setupAccessibilityControls() {

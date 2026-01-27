@@ -232,15 +232,6 @@
         }
       });
       
-      // Re-attach theme toggle event listeners
-      const themeSwitches = document.querySelectorAll('.theme-switch');
-      themeSwitches.forEach(btn => {
-        // Remove existing listener to avoid duplicates
-        btn.removeEventListener('click', window._themeToggleHandler);
-        // Add new listener
-        btn.addEventListener('click', window._themeToggleHandler);
-      });
-      
       // Reinitialize Eye Animation for home page
       if (this.currentPage === 'index.html') {
         // Use setTimeout to ensure DOM is fully rendered

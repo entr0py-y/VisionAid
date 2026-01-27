@@ -1144,7 +1144,12 @@ a:hover {
 }
 
 :root.light-mode .hero-tagline {
-    color: #000000;
+    color: #444444; /* Darker for better visibility than pure black if needed, but let's stick to theme variables where possible */
+}
+
+/* Logo Visibility in Light Mode */
+:root.light-mode .logo-icon {
+    filter: invert(1) brightness(0.2); /* Invert white logo and darken for premium look */
 }
 
 /* Glass Buttons */
@@ -1250,7 +1255,7 @@ a:hover {
     left: 2rem;
     z-index: 100;
     opacity: 0;
-    animation: fadeIn 1s ease 1s forwards;
+    animation: fadeIn 0.4s ease 0.2s forwards; /* Reduced delay from 1s to 0.2s */
 }
 
 .cta-button.large {
@@ -2921,7 +2926,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3)); /* Glow for gradient text */
+    filter: drop-shadow(var(--shadow-glow)); /* Use theme variable for shadow */
 }
 
 .display-subtitle {
