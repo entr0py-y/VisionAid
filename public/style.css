@@ -363,11 +363,26 @@ a:hover {
 }
 
 .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--text-primary);
     letter-spacing: -0.01em;
     flex-shrink: 0;
+}
+
+.logo-icon {
+    width: 34px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 4px;
+    transition: filter 0.3s ease;
+}
+
+:root.light-mode .logo-icon {
+    filter: invert(1); /* Invert white icon on black bg to black icon on white bg */
 }
 
 .nav-menu {
@@ -3681,4 +3696,21 @@ body {
     background: rgba(0, 0, 0, 0.06) !important;
     border-color: rgba(0, 0, 0, 0.15) !important;
     color: #000 !important;
+}
+
+/* Override heroRevealTitle for smooth blur transition */
+@keyframes heroRevealTitle {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.98);
+        filter: blur(12px) drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+    }
+    60% {
+        filter: blur(4px) drop-shadow(0 0 5px rgba(255, 255, 255, 0.1));
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0) drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
+    }
 }
