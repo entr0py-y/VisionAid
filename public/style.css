@@ -2855,10 +2855,11 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding-top: 80px; /* Header clearance */
+    justify-content: center; /* Vertical alignment */
+    align-items: center;    /* Horizontal alignment */
+    padding-top: 80px; 
     position: relative;
-    opacity: 1; /* Safe default */
-    transform: none; /* Safe default */
+    overflow: hidden;
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
@@ -2878,10 +2879,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center; /* Center children horizontally */
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
-    padding: 2rem;
+    padding: 3rem 2rem;
+    text-align: center; /* Default text center for 'middle' feel */
 }
 
 /* Architectural Grid */
@@ -2909,23 +2912,25 @@ body {
 /* Typography Enhancements */
 .display-title {
     font-size: clamp(2.5rem, 5vw, 4.5rem);
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: -0.04em;
-    line-height: 1.2;
-    padding-bottom: 0.2em;
-    margin-bottom: 0.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
     background: linear-gradient(to bottom, var(--text-primary), var(--text-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3)); /* Glow for gradient text */
+    text-align: center;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1));
 }
 
 .display-subtitle {
-    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
     color: var(--text-secondary);
-    max-width: 60ch;
-    margin-bottom: 3rem;
+    max-width: 700px;
+    margin: 0 auto 3rem auto; /* Centered with bottom margin */
+    line-height: 1.6;
+    text-align: center;
     font-weight: 300;
     letter-spacing: -0.01em;
 }
@@ -3187,8 +3192,10 @@ body {
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 28px;
-    padding: 48px;
-    margin: var(--space-xl) 0;
+    padding: 60px;
+    margin: 2rem auto; /* Centered margin */
+    max-width: 1100px;
+    width: calc(100% - 4rem);
     box-shadow: var(--glass-inner-glow), 0 8px 32px rgba(0, 0, 0, 0.3);
     transition: all var(--transition-smooth);
 }
