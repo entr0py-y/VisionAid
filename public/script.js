@@ -5,28 +5,36 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   // ========================
-  // DOT GRID BACKGROUND
-  // ========================
-  if (typeof GridController !== 'undefined' && document.getElementById('grid-canvas')) {
-      if (!window.currentGridController) {
-          window.currentGridController = new GridController();
-      }
-  }
-
-  // ========================
   // INTERACTIVE EYE BACKGROUND
   // ========================
   // ========================
   // INTERACTIVE EYE BACKGROUND
   // ========================
   if (typeof EyeController !== 'undefined' && document.getElementById('eye-canvas')) {
-      // Stagger initialization to reduce load lag
-      setTimeout(() => {
+      // Wait for fonts to be ready and stagger initialization to reduce load lag
+      const initEye = () => {
           if (!window.currentEyeController) {
               window.currentEyeController = new EyeController();
           }
-      }, 300);
+      };
+      
+      // Use requestIdleCallback for better scheduling, fallback to setTimeout
+      const scheduleEyeInit = () => {
+          if (window.requestIdleCallback) {
+              window.requestIdleCallback(initEye, { timeout: 1000 });
+          } else {
+              setTimeout(initEye, 500);
+          }
+      };
+      
+      // Wait for fonts to be ready to prevent layout thrashing
+      if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(scheduleEyeInit);
+      } else {
+          setTimeout(scheduleEyeInit, 100);
+      }
   }
+
 
   // ========================
   // CURSOR LIGHT EFFECT

@@ -1,6 +1,7 @@
 /**
  * Interactive Eye Background Animation
  * Premium, Full Almond Structure, Assistive Tech Aesthetic.
+ * Optimized for smooth initial loading.
  */
 
 class EyeController {
@@ -8,7 +9,14 @@ class EyeController {
         this.canvas = document.getElementById('eye-canvas');
         if (!this.canvas) return;
 
-        this.ctx = this.canvas.getContext('2d', { alpha: true });
+        // Optimize canvas for performance
+        this.ctx = this.canvas.getContext('2d', { 
+            alpha: true,
+            desynchronized: true // Reduces latency
+        });
+        
+        // Performance optimization
+        this.canvas.style.willChange = 'transform';
         
         // State
         this.mouse = { x: 0, y: 0 };
@@ -27,6 +35,8 @@ class EyeController {
         this.rafId = null;
         this.time = 0;
         this.irisRotation = 0;
+        this.frameCount = 0; // Track frames for startup optimization
+        this.isWarmedUp = false; // Flag for initial warmup period
         
         // Eyelid State
         this.blinkFactor = 0; // 0 = open, 1 = closed
@@ -65,7 +75,12 @@ class EyeController {
         this.bindEvents();
         this.resize();
         this.updateTheme();
-        this.animate();
+        // Delay animation start slightly to let browser settle
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                this.animate();
+            });
+        });
     }
 
     bindEvents() {
@@ -274,17 +289,20 @@ class EyeController {
         this.ctx.arc(0, 0, this.irisRadius, 0, Math.PI * 2);
         this.ctx.fill();
 
-        // Iris Radial Lines
-        this.ctx.strokeStyle = this.colors.radialLines;
-        this.ctx.lineWidth = 1;
-        const lines = 40;
-        for (let i = 0; i < lines; i++) {
-            const angle = (i / lines) * Math.PI * 2;
-            const len = (i % 2 === 0) ? 0.9 : 0.7; // Varying lengths
-            this.ctx.beginPath();
-            this.ctx.moveTo(Math.cos(angle) * this.irisRadius * 0.3, Math.sin(angle) * this.irisRadius * 0.3);
-            this.ctx.lineTo(Math.cos(angle) * this.irisRadius * len, Math.sin(angle) * this.irisRadius * len);
-            this.ctx.stroke();
+        // Iris Radial Lines - Reduced from 40 to 24 for better performance
+        // Skip radial lines during warmup for faster initial render
+        if (this.isWarmedUp) {
+            this.ctx.strokeStyle = this.colors.radialLines;
+            this.ctx.lineWidth = 1;
+            const lines = 24; // Reduced from 40
+            this.ctx.beginPath(); // Batch all lines into single path
+            for (let i = 0; i < lines; i++) {
+                const angle = (i / lines) * Math.PI * 2;
+                const len = (i % 2 === 0) ? 0.9 : 0.7;
+                this.ctx.moveTo(Math.cos(angle) * this.irisRadius * 0.3, Math.sin(angle) * this.irisRadius * 0.3);
+                this.ctx.lineTo(Math.cos(angle) * this.irisRadius * len, Math.sin(angle) * this.irisRadius * len);
+            }
+            this.ctx.stroke(); // Single stroke call for all lines
         }
 
         // --- LAYER 4: PUPIL ---
@@ -313,7 +331,21 @@ class EyeController {
     }
 
     animate() {
+        // Track warmup period - first 60 frames (~1 second)
+        this.frameCount++;
+        if (this.frameCount > 60 && !this.isWarmedUp) {
+            this.isWarmedUp = true;
+            // Remove will-change after warmup to free GPU memory
+            this.canvas.style.willChange = 'auto';
+        }
+        
         if (document.hidden) { // Optimization
+            this.rafId = requestAnimationFrame(() => this.animate());
+            return;
+        }
+        
+        // During warmup, skip every other frame for smoother perceived performance
+        if (!this.isWarmedUp && this.frameCount % 2 === 0) {
             this.rafId = requestAnimationFrame(() => this.animate());
             return;
         }
