@@ -11,9 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // INTERACTIVE EYE BACKGROUND
   // ========================
   if (typeof EyeController !== 'undefined' && document.getElementById('eye-canvas')) {
-      if (!window.currentEyeController) {
-          window.currentEyeController = new EyeController();
-      }
+      // Stagger initialization to reduce load lag
+      setTimeout(() => {
+          if (!window.currentEyeController) {
+              window.currentEyeController = new EyeController();
+          }
+      }, 300);
   }
 
   // ========================
@@ -54,7 +57,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Only enable cursor light on non-touch devices
   if (window.matchMedia("(pointer: fine)").matches) {
-    createCursorLight();
+    // Stagger cursor light to reduce initial load jank
+    if (window.requestIdleCallback) {
+      window.requestIdleCallback(() => createCursorLight());
+    } else {
+      setTimeout(createCursorLight, 800);
+    }
   }
 
   // ========================
@@ -182,6 +190,20 @@ document.addEventListener("DOMContentLoaded", () => {
       this.setupThemeToggle();
       this.setupAccessibilityControls();
       this.setupResetButton();
+      this.setupLiquidGlassTracking();
+    },
+    
+    setupLiquidGlassTracking() {
+      if (!this.panel) return;
+      
+      this.panel.addEventListener('mousemove', (e) => {
+        const rect = this.panel.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        
+        this.panel.style.setProperty('--liquid-x', `${x}%`);
+        this.panel.style.setProperty('--liquid-y', `${y}%`);
+      });
     },
     
     createSettingsPanel() {

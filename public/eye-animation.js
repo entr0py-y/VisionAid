@@ -93,13 +93,8 @@ class EyeController {
             this.lastMouse.x = this.mouse.x;
             this.lastMouse.y = this.mouse.y;
             
-            // Set squint on hover over interactive elements
-            const hovered = document.elementFromPoint(this.mouse.x, this.mouse.y);
-            if (hovered && (hovered.tagName === 'A' || hovered.tagName === 'BUTTON' || hovered.closest('a') || hovered.closest('button'))) {
-                this.targetSquint = 0.25; // 25% focus squint
-            } else {
-                this.targetSquint = 0;
-            }
+            // Removed layout-triggering elementFromPoint for performance
+            this.targetSquint = 0;
         });
         
         const observer = new MutationObserver(() => this.updateTheme());

@@ -119,8 +119,8 @@ main#main-content {
     /* Container */
     --container-max: 1280px;
     
-    /* Noise Texture */
-    --noise-texture: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    /* High Performance Grain Texture */
+    --noise-texture: radial-gradient(#ffffff 0.5px, transparent 0.5px);
 
     /* Eye Animation Variables (Dark Mode Default) */
     --eye-bg: #0B0B0D;
@@ -129,6 +129,13 @@ main#main-content {
     --eye-iris-end: #444444;
     --eye-pupil: #000000;
     --eye-glow: rgba(255, 255, 255, 0.05);
+
+    /* Liquid Glass Material System - Ultra Premium */
+    --liquid-bg: rgba(22, 22, 24, 0.65);
+    --liquid-blur: blur(40px) saturate(200%) contrast(90%);
+    --liquid-border: rgba(255, 255, 255, 0.08);
+    --liquid-shine: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 40%, transparent 100%);
+    --liquid-edge: inset 0 1px 0 rgba(255, 255, 255, 0.12), inset 0 -1px 0 rgba(255, 255, 255, 0.03);
 }
 
 /* ================================================
@@ -178,6 +185,13 @@ main#main-content {
     --eye-iris-end: #C0C0C0;
     --eye-pupil: #222222;
     --eye-glow: transparent;
+
+    /* Liquid Glass Material System - Light Mode */
+    --liquid-bg: rgba(255, 255, 255, 0.65);
+    --liquid-blur: blur(40px) saturate(180%) contrast(95%);
+    --liquid-border: rgba(0, 0, 0, 0.05);
+    --liquid-shine: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+    --liquid-edge: inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 -1px 0 rgba(0, 0, 0, 0.02);
 }
 
 /* Light Mode Navbar Overrides */
@@ -190,11 +204,6 @@ main#main-content {
     -webkit-backdrop-filter: none;
 }
 
-:root.light-mode .navbar.scrolled {
-    /* Optional: If we want it to stay hidden or appear on scroll, user said "scrolled away" implies let it go */
-    /* Since position is absolute, it will naturally scroll away. */
-    /* If we want to bring it back on scroll up, we'd need sticky, but user said "not locked like in dark mode". */
-}
 
 
 body {
@@ -734,18 +743,55 @@ a:hover {
     position: fixed;
     top: 0;
     right: 0;
-    width: min(380px, 90vw);
+    width: min(420px, 90vw); /* Slightly wider for better spacing */
     height: 100vh;
-    background: rgba(22, 22, 24, 0.95);
-    backdrop-filter: blur(var(--glass-blur-heavy));
-    -webkit-backdrop-filter: blur(var(--glass-blur-heavy));
-    border-left: 1px solid var(--border-subtle);
+    
+    /* Liquid Glass Material Application */
+    background: var(--liquid-bg);
+    backdrop-filter: var(--liquid-blur);
+    -webkit-backdrop-filter: var(--liquid-blur);
+    
+    border-left: 1px solid var(--liquid-border);
+    box-shadow: 
+        var(--liquid-edge),
+        -10px 0 50px rgba(0, 0, 0, 0.3),
+        -20px 0 100px rgba(0, 0, 0, 0.1);
+    
     transform: translateX(100%);
-    transition: transform var(--transition-slow);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); /* Ultra smooth slide */
     z-index: 2000;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Micro-movement & Light Diffusion Layer */
+.settings-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at var(--liquid-x, 50%) var(--liquid-y, 50%),
+        rgba(255, 255, 255, 0.03) 0%,
+        transparent 70%
+    );
+    pointer-events: none;
+    z-index: -1;
+    animation: liquidDrift 20s infinite alternate ease-in-out;
+}
+
+@keyframes liquidDrift {
+    0% { transform: translate(-5% -5%) scale(1); }
+    100% { transform: translate(5%, 5%) scale(1.1); }
+}
+
+/* Internal glass items for depth layering */
+.settings-group, 
+.theme-toggle-container, 
+.settings-toggle-btn {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 :root.light-mode .settings-panel {
@@ -1016,13 +1062,14 @@ a:hover {
 .hero {
     min-height: 100vh;
     scroll-snap-align: start;
-    scroll-snap-stop: always; /* Force stop at each section */
+    scroll-snap-stop: always;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    padding-top: 80px;
+    padding-top: 0; /* Reset for absolute positioning */
 }
 
 .hero-fullpage {
@@ -1042,13 +1089,14 @@ a:hover {
     pointer-events: none;
 }
 
-/* Noise Grain Overlay */
+/* Noise Grain Overlay - High Performance CSS Grain */
 .hero::after {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-    opacity: 0.03;
+    background-image: radial-gradient(#ffffff 0.5px, transparent 0.5px);
+    background-size: 4px 4px;
+    opacity: 0.02;
     pointer-events: none;
 }
 
@@ -1079,10 +1127,14 @@ a:hover {
 
 .hero-content {
     text-align: center;
-    max-width: 900px;
-    position: relative;
-    z-index: 1;
+    max-width: 950px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
     padding: var(--space-lg);
+    width: 100%;
 }
 
 .hero-badge {
@@ -1154,13 +1206,18 @@ a:hover {
 
 /* Glass Buttons */
 .hero-cta-group {
+    position: absolute;
+    bottom: 8vh;
+    left: 0;
+    width: 100%;
     display: flex;
     gap: var(--space-md);
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    margin-bottom: var(--space-2xl);
-    opacity: 0;
-    animation: fadeInUp 0.8s ease 0.3s forwards;
+    z-index: 10;
+    margin: 0;
+    padding: 0 var(--space-md);
 }
 
 /* Apple Liquid Glass Button */
@@ -1214,6 +1271,9 @@ a:hover {
         linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
     pointer-events: none;
     opacity: 0.6;
 }
