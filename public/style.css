@@ -1107,13 +1107,22 @@ a:hover {
     z-index: 0;
 }
 
+#grid-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* Behind the eye canvas */
+    pointer-events: none;
+}
+
 #eye-canvas {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
-    pointer-events: none; /* Let clicks pass through, JS handles mousemove on window */
+    pointer-events: none;
 }
 
 /* Removed hero-particles definitions as they are replaced by canvas */

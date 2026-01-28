@@ -5,6 +5,15 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   // ========================
+  // DOT GRID BACKGROUND
+  // ========================
+  if (typeof GridController !== 'undefined' && document.getElementById('grid-canvas')) {
+      if (!window.currentGridController) {
+          window.currentGridController = new GridController();
+      }
+  }
+
+  // ========================
   // INTERACTIVE EYE BACKGROUND
   // ========================
   // ========================
