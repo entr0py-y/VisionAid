@@ -132,6 +132,9 @@
                 }, index * 50);
             });
             document.querySelector('.page-slide').classList.add('visible');
+            
+            // Team page: Enable focus animations only after first interaction
+            initInteractionTrigger();
         });
         
         document.addEventListener('spa-page-loaded', () => {
@@ -143,7 +146,37 @@
             });
             const slide = document.querySelector('.page-slide');
             if(slide) slide.classList.add('visible');
+            
+            // Re-init for SPA navigation
+            initInteractionTrigger();
         });
+        
+        // Wait for first interaction before enabling blur/scale animations
+        function initInteractionTrigger() {
+            const focusGrid = document.querySelector('.focus-grid');
+            if (!focusGrid) return;
+            
+            // Initially disable focus effects
+            focusGrid.classList.add('focus-disabled');
+            
+            // One-time interaction listener
+            const enableFocusEffects = () => {
+                focusGrid.classList.remove('focus-disabled');
+                focusGrid.classList.add('focus-enabled');
+                
+                // Remove all listeners after first interaction
+                ['scroll', 'click', 'mousemove', 'touchstart', 'keydown'].forEach(event => {
+                    window.removeEventListener(event, enableFocusEffects);
+                    document.removeEventListener(event, enableFocusEffects);
+                });
+            };
+            
+            // Listen for any interaction
+            ['scroll', 'click', 'mousemove', 'touchstart', 'keydown'].forEach(event => {
+                window.addEventListener(event, enableFocusEffects, { once: true, passive: true });
+                document.addEventListener(event, enableFocusEffects, { once: true, passive: true });
+            });
+        }
     </script>
 <canvas id="grid-canvas" class="grid-background"></canvas>
     <script src="grid-background.js"></script>

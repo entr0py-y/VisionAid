@@ -3402,6 +3402,49 @@ body {
     opacity: 0; /* Override previous rule if it persists, or just replace functionality */
 }
 
+/* ================================================
+   INTERACTION-TRIGGERED FOCUS EFFECTS
+   Blur/scale only activates after first user interaction
+   ================================================ */
+
+/* When disabled, prevent all focus effects */
+.focus-grid.focus-disabled .minimal-card,
+.focus-grid.focus-disabled .team-member,
+.focus-grid.focus-disabled .hw-card {
+    transition: none !important;
+}
+
+.focus-grid.focus-disabled:has(.minimal-card:hover) .minimal-card:not(:hover),
+.focus-grid.focus-disabled:has(.team-member:hover) .team-member:not(:hover),
+.focus-grid.focus-disabled:has(.hw-card:hover) .hw-card:not(:hover) {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+}
+
+.focus-grid.focus-disabled .minimal-card:hover,
+.focus-grid.focus-disabled .team-member:hover,
+.focus-grid.focus-disabled .hw-card:hover {
+    transform: none !important;
+    filter: none !important;
+}
+
+.focus-grid.focus-disabled:has(.minimal-card:hover)::before,
+.focus-grid.focus-disabled:has(.team-member:hover)::before,
+.focus-grid.focus-disabled:has(.hw-card:hover)::before {
+    opacity: 0 !important;
+}
+
+/* When enabled after interaction, restore smooth transitions */
+.focus-grid.focus-enabled .minimal-card,
+.focus-grid.focus-enabled .team-member,
+.focus-grid.focus-enabled .hw-card {
+    transition: 
+        transform 500ms cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
+        filter 500ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
 
 .hw-card h5 {
     margin: 0 0 0.5rem 0;

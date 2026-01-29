@@ -39,11 +39,12 @@ class EyeController {
         this.isWarmedUp = false; // Flag for initial warmup period
         
         // Eyelid State
-        this.blinkFactor = 0; // 0 = open, 1 = closed
+        this.blinkFactor = 1; // Start CLOSED (1 = closed, 0 = open)
         this.squintFactor = 0; // 0 = relaxed, 1 = squinted
         this.targetSquint = 0;
         this.nextBlinkTime = Math.random() * 300 + 200; // Frames until next blink
         this.isBlinking = false;
+        this.hasInteracted = false; // Eye stays closed until first interaction
         
         // Physics
         this.velocity = { x: 0, y: 0 };
@@ -87,6 +88,7 @@ class EyeController {
         const resetIdle = () => {
             this.lastInteractionTime = Date.now();
             this.isIdle = false;
+            this.hasInteracted = true; // Mark that user has interacted - eye will open
         };
 
         window.addEventListener('resize', () => this.resize());
@@ -198,13 +200,17 @@ class EyeController {
         this.currentIris.y = this.lerp(this.currentIris.y, targetY * 0.8, this.lerpFactor * 0.8);
 
         // 2. Blinking Logic
-        // If idle, overwrite normal blinking logic to force close
-        if (this.isIdle) {
+        // If user hasn't interacted yet, keep eye closed
+        if (!this.hasInteracted) {
+            this.blinkFactor = 1; // Stay fully closed
+            this.isBlinking = false;
+        } else if (this.isIdle) {
+            // If idle (after interaction), slowly close
             this.blinkFactor = this.lerp(this.blinkFactor, 1, 0.05); // Smooth close for idle
             this.isBlinking = false; // Disable random blinking while idle
             this.targetSquint = 0; // Relax squint
         } else {
-            // Normal Random Blinking
+            // Normal Random Blinking (eye is open and active)
             this.nextBlinkTime--;
             if (this.nextBlinkTime <= 0) {
                 this.isBlinking = true;
@@ -218,7 +224,7 @@ class EyeController {
                     this.nextBlinkTime = Math.random() * 300 + 300; // Reset timer
                 }
             } else {
-                this.blinkFactor = this.lerp(this.blinkFactor, 0, 0.1); // Open slowly
+                this.blinkFactor = this.lerp(this.blinkFactor, 0, 0.08); // Open smoothly
             }
         }
 
