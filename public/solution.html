@@ -139,29 +139,7 @@
     <script src="eye-animation.js"></script>
     <script src="script.js"></script>
     <script src="spa-router.js"></script>
-    <script>
-        // Trigger animations on load
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.reveal-up').forEach((el, index) => {
-                setTimeout(() => {
-                    el.classList.add('active');
-                }, index * 100);
-            });
-            document.querySelector('.page-slide').classList.add('visible');
-        });
-        
-        document.addEventListener('spa-page-loaded', () => {
-             document.querySelectorAll('.reveal-up').forEach((el, index) => {
-                el.classList.remove('active');
-                setTimeout(() => {
-                    el.classList.add('active');
-                }, index * 100);
-            });
-            const slide = document.querySelector('.page-slide');
-            if(slide) slide.classList.add('visible');
-        });
-    </script>
-<canvas id="grid-canvas" class="grid-background"></canvas>
+    <canvas id="grid-canvas" class="grid-background"></canvas>
     <script src="grid-background.js"></script>
 </body>
 </html>

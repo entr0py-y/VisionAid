@@ -224,6 +224,15 @@
       
       revealTargets.forEach(element => {
         element.classList.add('reveal', 'visible');
+        
+        // Handle standard reveal-up animations
+        if (element.classList.contains('reveal-up')) {
+          element.classList.remove('active');
+          // Force a reflow to restart animation if needed
+          void element.offsetWidth;
+          element.classList.add('active');
+        }
+
         // Handle new system safely
         if (element.classList.contains('animate-in')) {
              requestAnimationFrame(() => {
@@ -267,7 +276,7 @@
     
     // Sequence Map: Current -> { label (button text), file (target) }
     nextMap: {
-        'problem.html': { label: 'See Our Solution', file: 'solution.html' },
+        // 'problem.html': has inline button, skip auto-generation
         'solution.html': { label: 'Discover the Features', file: 'features.html' },
         'features.html': { label: 'See the Impact', file: 'impact.html' },
         'impact.html': { label: 'Meet the Team', file: 'team.html' }
