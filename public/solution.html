@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Solution - Vision AID">
+    <title>Solution - Vision AID</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar" aria-label="Primary">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <img src="logo.png" alt="Vision AID Logo" class="logo-icon">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="problem.html" class="nav-link">Problem</a></li>
+                    <li><a href="solution.html" class="nav-link active">Solution</a></li>
+                    <li><a href="roadmap.html" class="nav-link">USP & Roadmap</a></li>
+                    <li><a href="feasibility.html" class="nav-link">Feasibility</a></li>
+                    <li><a href="team.html" class="nav-link">Team</a></li>
+                </ul>
+                <button type="button" id="settings-toggle" class="settings-toggle" aria-label="Settings"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <div class="scrollable-page">
+
+            <!-- ── SECTION 1: THE SOLUTION ────────────────────────────── -->
+            <section class="scroll-section" style="padding: 6rem 0 5rem;">
+                <div class="content-center">
+                    <div class="architectural-grid">
+                        <div class="grid-col-12 reveal-up" style="margin-bottom: 2rem;">
+                            <h1 class="display-title">The Solution</h1>
+                            <p class="display-subtitle">Vision AID is a hybrid edge–mobile–cloud assistive intelligence system — designed for real-world independence.</p>
+                        </div>
+                        <div class="grid-col-4 reveal-up delay-100">
+                            <div class="hw-card" style="flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.75rem; height: 100%;">
+                                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                                    <h4 style="font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin: 0;">Edge Layer</h4>
+                                </div>
+                                <h3 style="font-size: 1.15rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.5rem 0;">Raspberry Pi</h3>
+                                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem;">
+                                    <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Real-time YOLO detection</li>
+                                    <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Sensor fusion</li>
+                                    <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Distance estimation</li>
+                                    <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Low-latency TTS</li>
+                                    <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Offline processing</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="grid-col-4 reveal-up delay-200">
+                            <div class="hw-card" style="flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.75rem; height: 100%;">
+                                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg>
+                                    <h4 style="font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin: 0;">Mobile Layer</h4>
+                                </div>
+                                <h3 style="font-size: 1.15rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.5rem 0;">Android Companion</h3>
+                                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem;">
+                                    <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>GPS navigation</li>
+                                    <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Cloud sync</li>
+                                    <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Emergency SMS</li>
+                                    <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>OTA updates</li>
+                                    <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Risk dashboard</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="grid-col-4 reveal-up delay-300">
+                            <div class="hw-card" style="flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.75rem; height: 100%;">
+                                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+                                    <h4 style="font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin: 0;">Cloud Layer</h4>
+                                </div>
+                                <h3 style="font-size: 1.15rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.5rem 0;">Intelligence Backend</h3>
+                                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem;">
+                                    <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Encrypted backup</li>
+                                    <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Analytics</li>
+                                    <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Model updates</li>
+                                    <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Fleet management</li>
+                                    <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Long-term optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div style="border-top: 1px solid var(--border-subtle); margin: 0 2rem;"></div>
+
+            <!-- ── SECTION 2: PRODUCT CAPABILITIES ───────────────────── -->
+            <section class="scroll-section" style="padding: 5rem 0;">
+                <div class="content-center">
+                    <h2 class="display-title reveal-up" style="margin-bottom: 0.5rem;">Product Capabilities</h2>
+                    <p class="display-subtitle reveal-up delay-100" style="margin-bottom: 2.5rem;">Six core intelligence systems working in unison to deliver real-world assistive performance.</p>
+                    <div class="architectural-grid focus-grid feature-grid-enhanced">
+                        <article class="grid-col-4 minimal-card feature-item reveal-up delay-100">
+                            <h3 class="feature-title">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" style="flex-shrink:0;"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/></svg>
+                                <span>Intelligent Navigation</span>
+                            </h3>
+                            <p class="feature-description">Real-time path guidance using sensor fusion and object detection. Identifies safe corridors, detects obstacles at multiple body levels, and provides proactive spatial audio cues.</p>
+                        </article>
+                        <article class="grid-col-4 minimal-card feature-item reveal-up delay-200">
+                            <h3 class="feature-title">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" style="flex-shrink:0;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                <span>Real-Time Safety Awareness</span>
+                            </h3>
+                            <p class="feature-description">Continuous environmental scanning with YOLO detection. Identifies people, vehicles, stairs, and hazards in real time — no cloud round-trip required.</p>
+                        </article>
+                        <article class="grid-col-4 minimal-card feature-item reveal-up delay-300">
+                            <h3 class="feature-title">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" style="flex-shrink:0;"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                                <span>Adaptive Alerts</span>
+                            </h3>
+                            <p class="feature-description">Smart priority logic filters noise from signal. Alerts are context-aware — verbosity, urgency, and frequency adapt dynamically to environment and situation.</p>
+                        </article>
+                        <article class="grid-col-4 minimal-card feature-item reveal-up delay-100">
+                            <h3 class="feature-title">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" style="flex-shrink:0;"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                <span>Offline-First Privacy</span>
+                            </h3>
+                            <p class="feature-description">All core processing runs on-device. No data leaves the hardware without consent. Full functionality in zero-network environments — privacy by architecture, not policy.</p>
+                        </article>
+                        <article class="grid-col-4 minimal-card feature-item reveal-up delay-200">
+                            <h3 class="feature-title">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" style="flex-shrink:0;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.99 16.92z"/></svg>
+                                <span>Emergency Response System</span>
+                            </h3>
+                            <p class="feature-description">Detects distress signals and triggers automatic emergency SMS with GPS coordinates via the companion app. Caregiver alerts without user action required.</p>
+                        </article>
+                        <article class="grid-col-4 minimal-card feature-item reveal-up delay-300">
+                            <h3 class="feature-title">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" style="flex-shrink:0;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                <span>Context-Aware Announcements</span>
+                            </h3>
+                            <p class="feature-description">Objects are announced intelligently — not everything, only what matters. The system understands scene context to eliminate audio fatigue and deliver useful information.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <div style="border-top: 1px solid var(--border-subtle); margin: 0 2rem;"></div>
+
+            <!-- ── SECTION 3: TECH STACK ──────────────────────────────── -->
+            <section class="scroll-section" style="padding: 5rem 0;">
+                <div class="content-center">
+                    <div style="margin-bottom: 2.5rem;" class="reveal-up">
+                        <h2 class="display-title" style="margin-bottom: 0.6rem;">Technology Stack</h2>
+                        <p class="display-subtitle" style="margin: 0;">Purpose-built hardware and open-source software running entirely on-device.</p>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: stretch;">
+
+                        <!-- HARDWARE -->
+                        <div class="reveal-up delay-100" style="border: 1px solid var(--border-light); border-radius: 10px; overflow: hidden; background: var(--bg-glass);">
+                            <div style="padding: 1.5rem 1.75rem; border-bottom: 1px solid var(--border-subtle);">
+                                <p style="font-size: 0.72rem; font-family: 'Space Mono', monospace; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 0.35rem;">physical components</p>
+                                <h3 style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 0;">Hardware</h3>
+                            </div>
+                            <div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);">
+                                    <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary); white-space: nowrap;">Raspberry Pi 4B</span>
+                                    <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); white-space: nowrap; margin-left: 1rem;">compute unit</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);">
+                                    <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary); white-space: nowrap;">Camera Module</span>
+                                    <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); white-space: nowrap; margin-left: 1rem;">vision input</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);">
+                                    <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary); white-space: nowrap;">Ultrasonic / IR</span>
+                                    <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); white-space: nowrap; margin-left: 1rem;">depth sensing</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);">
+                                    <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary); white-space: nowrap;">Battery Pack</span>
+                                    <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); white-space: nowrap; margin-left: 1rem;">portable power</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);">
+                                    <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary); white-space: nowrap;">Speaker / Earphones</span>
+                                    <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); white-space: nowrap; margin-left: 1rem;">audio output</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem;">
+                                    <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary); white-space: nowrap;">Chest Mount</span>
+                                    <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); white-space: nowrap; margin-left: 1rem;">wearable form</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SOFTWARE -->
+                        <div class="reveal-up delay-200" style="border: 1px solid var(--border-light); border-radius: 10px; overflow: hidden; background: var(--bg-glass);">
+                            <div style="padding: 1.5rem 1.75rem; border-bottom: 1px solid var(--border-subtle);">
+                                <p style="font-size: 0.72rem; font-family: 'Space Mono', monospace; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 0.35rem;">software stack</p>
+                                <h3 style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 0;">Software</h3>
+                            </div>
+                            <div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);">
+                                    <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary); white-space: nowrap;">Python</span>
+                                    <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); white-space: nowrap; margin-left: 1rem;">core language</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);">
+                                    <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary); white-space: nowrap;">OpenCV</span>
+                                    <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); white-space: nowrap; margin-left: 1rem;">vision processing</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);">
+                                    <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary); white-space: nowrap;">YOLO</span>
+                                    <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); white-space: nowrap; margin-left: 1rem;">object detection</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);">
+                                    <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary); white-space: nowrap;">eSpeak NG / TTS</span>
+                                    <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); white-space: nowrap; margin-left: 1rem;">speech output</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);">
+                                    <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary); white-space: nowrap;">Vosk STT</span>
+                                    <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); white-space: nowrap; margin-left: 1rem;">voice commands</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem;">
+                                    <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary); white-space: nowrap;">TensorFlow / Colab</span>
+                                    <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); white-space: nowrap; margin-left: 1rem;">model training</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- AI & INTELLIGENCE -->
+                        <div class="reveal-up delay-300" style="border: 1px solid var(--border-light); border-radius: 10px; overflow: hidden; background: var(--bg-glass);">
+                            <div style="padding: 1.5rem 1.75rem; border-bottom: 1px solid var(--border-subtle);">
+                                <p style="font-size: 0.72rem; font-family: 'Space Mono', monospace; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 0.35rem;">intelligent systems</p>
+                                <h3 style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 0;">AI & Intelligence</h3>
+                            </div>
+                            <div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);">
+                                    <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary); white-space: nowrap;">Computer Vision</span>
+                                    <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); white-space: nowrap; margin-left: 1rem;">scene understanding</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);">
+                                    <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary); white-space: nowrap;">Hybrid AI Routing</span>
+                                    <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); white-space: nowrap; margin-left: 1rem;">edge / cloud</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);">
+                                    <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary); white-space: nowrap;">Sensor Fusion</span>
+                                    <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); white-space: nowrap; margin-left: 1rem;">camera + depth</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);">
+                                    <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary); white-space: nowrap;">Risk Scoring</span>
+                                    <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); white-space: nowrap; margin-left: 1rem;">priority logic</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);">
+                                    <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary); white-space: nowrap;">Speech Pipeline</span>
+                                    <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); white-space: nowrap; margin-left: 1rem;">non-blocking</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem;">
+                                    <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary); white-space: nowrap;">Alert Dispatcher</span>
+                                    <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); white-space: nowrap; margin-left: 1rem;">audio queue</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <div style="border-top: 1px solid var(--border-subtle); margin: 0 2rem;"></div>
+
+            <!-- ── SECTION 4: ARCHITECTURE FLOW ──────────────────────── -->
+            <section class="scroll-section" style="padding: 4rem 0 5rem;">
+                <div class="content-center">
+                    <!-- Header -->
+                    <div class="reveal-up" style="margin-bottom: 3rem;">
+                        <h2 class="display-title" style="margin-bottom: 0.6rem;">Architecture Flow</h2>
+                        <p class="display-subtitle" style="margin: 0;">A deterministic, offline-first processing loop. Every perception cycle completes on-device — input to speech in milliseconds.</p>
+                    </div>
+
+                    <!-- Flowchart: 2-column grid of nodes, centre arrow column -->
+                    <div class="reveal-up delay-100" style="display: grid; grid-template-columns: 1fr 56px 1fr; gap: 0; max-width: 860px; margin: 0 auto;">
+
+                        <!-- ── STEP 01 ── -->
+                        <div style="grid-column:1; grid-row:1; display:flex; align-items:stretch;">
+                            <div style="flex:1; border:1px solid var(--border-light); border-radius:10px; padding:1.25rem 1.5rem; background:var(--bg-glass); display:flex; flex-direction:column; gap:0.35rem;">
+                                <div style="display:flex; align-items:center; gap:0.75rem;">
+                                    <span style="font-family:'Space Mono',monospace; font-size:0.65rem; color:var(--text-muted); background:var(--bg-elevated); padding:0.2rem 0.5rem; border-radius:4px;">01</span>
+                                    <span style="font-size:0.95rem; font-weight:600; color:var(--text-primary);">Camera Input</span>
+                                    <span style="margin-left:auto; font-family:'Space Mono',monospace; font-size:0.68rem; color:var(--text-muted);">30fps</span>
+                                </div>
+                                <p style="margin:0; font-size:0.8rem; color:var(--text-muted); line-height:1.6;">Continuous video frames captured from the RPi camera module at 30fps.</p>
+                            </div>
+                        </div>
+                        <!-- arrow right → -->
+                        <div style="grid-column:2; grid-row:1; display:flex; align-items:center; justify-content:center;">
+                            <svg width="32" height="16" viewBox="0 0 32 16" fill="none"><path d="M2 8h24M18 2l8 6-8 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/></svg>
+                        </div>
+                        <!-- ── STEP 02 ── -->
+                        <div style="grid-column:3; grid-row:1; display:flex; align-items:stretch;">
+                            <div style="flex:1; border:1px solid var(--border-light); border-radius:10px; padding:1.25rem 1.5rem; background:var(--bg-glass); display:flex; flex-direction:column; gap:0.35rem;">
+                                <div style="display:flex; align-items:center; gap:0.75rem;">
+                                    <span style="font-family:'Space Mono',monospace; font-size:0.65rem; color:var(--text-muted); background:var(--bg-elevated); padding:0.2rem 0.5rem; border-radius:4px;">02</span>
+                                    <span style="font-size:0.95rem; font-weight:600; color:var(--text-primary);">Edge Processing</span>
+                                    <span style="margin-left:auto; font-family:'Space Mono',monospace; font-size:0.68rem; color:var(--text-muted);">OpenCV</span>
+                                </div>
+                                <p style="margin:0; font-size:0.8rem; color:var(--text-muted); line-height:1.6;">Frame preprocessing, resizing, and normalisation done on-device before inference.</p>
+                            </div>
+                        </div>
+
+                        <!-- down arrow under col 3 -->
+                        <div style="grid-column:3; grid-row:2; display:flex; align-items:center; justify-content:center; padding:0.6rem 0;">
+                            <svg width="16" height="28" viewBox="0 0 16 28" fill="none"><path d="M8 2v22M2 18l6 8 6-8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/></svg>
+                        </div>
+
+                        <!-- ── STEP 03 ── -->
+                        <div style="grid-column:3; grid-row:3; display:flex; align-items:stretch;">
+                            <div style="flex:1; border:1px solid var(--border-light); border-radius:10px; padding:1.25rem 1.5rem; background:var(--bg-glass); display:flex; flex-direction:column; gap:0.35rem;">
+                                <div style="display:flex; align-items:center; gap:0.75rem;">
+                                    <span style="font-family:'Space Mono',monospace; font-size:0.65rem; color:var(--text-muted); background:var(--bg-elevated); padding:0.2rem 0.5rem; border-radius:4px;">03</span>
+                                    <span style="font-size:0.95rem; font-weight:600; color:var(--text-primary);">Object Detection</span>
+                                    <span style="margin-left:auto; font-family:'Space Mono',monospace; font-size:0.68rem; color:var(--text-muted);">YOLO</span>
+                                </div>
+                                <p style="margin:0; font-size:0.8rem; color:var(--text-muted); line-height:1.6;">YOLO model identifies objects, people, and hazards in real time — no cloud needed.</p>
+                            </div>
+                        </div>
+                        <!-- arrow left ← -->
+                        <div style="grid-column:2; grid-row:3; display:flex; align-items:center; justify-content:center;">
+                            <svg width="32" height="16" viewBox="0 0 32 16" fill="none"><path d="M30 8H6M14 2L6 8l8 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/></svg>
+                        </div>
+                        <!-- ── STEP 04 ── -->
+                        <div style="grid-column:1; grid-row:3; display:flex; align-items:stretch;">
+                            <div style="flex:1; border:1px solid var(--border-light); border-radius:10px; padding:1.25rem 1.5rem; background:var(--bg-glass); display:flex; flex-direction:column; gap:0.35rem;">
+                                <div style="display:flex; align-items:center; gap:0.75rem;">
+                                    <span style="font-family:'Space Mono',monospace; font-size:0.65rem; color:var(--text-muted); background:var(--bg-elevated); padding:0.2rem 0.5rem; border-radius:4px;">04</span>
+                                    <span style="font-size:0.95rem; font-weight:600; color:var(--text-primary);">Context Filtering</span>
+                                    <span style="margin-left:auto; font-family:'Space Mono',monospace; font-size:0.68rem; color:var(--text-muted);">Priority Logic</span>
+                                </div>
+                                <p style="margin:0; font-size:0.8rem; color:var(--text-muted); line-height:1.6;">Smart filtering decides what matters — reducing noise and preventing alert fatigue.</p>
+                            </div>
+                        </div>
+
+                        <!-- down arrow under col 1 -->
+                        <div style="grid-column:1; grid-row:4; display:flex; align-items:center; justify-content:center; padding:0.6rem 0;">
+                            <svg width="16" height="28" viewBox="0 0 16 28" fill="none"><path d="M8 2v22M2 18l6 8 6-8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/></svg>
+                        </div>
+
+                        <!-- ── STEP 05 ── -->
+                        <div style="grid-column:1; grid-row:5; display:flex; align-items:stretch;">
+                            <div style="flex:1; border:1px solid var(--border-light); border-radius:10px; padding:1.25rem 1.5rem; background:var(--bg-glass); display:flex; flex-direction:column; gap:0.35rem;">
+                                <div style="display:flex; align-items:center; gap:0.75rem;">
+                                    <span style="font-family:'Space Mono',monospace; font-size:0.65rem; color:var(--text-muted); background:var(--bg-elevated); padding:0.2rem 0.5rem; border-radius:4px;">05</span>
+                                    <span style="font-size:0.95rem; font-weight:600; color:var(--text-primary);">Risk Scoring</span>
+                                    <span style="margin-left:auto; font-family:'Space Mono',monospace; font-size:0.68rem; color:var(--text-muted);">Sensor Fusion</span>
+                                </div>
+                                <p style="margin:0; font-size:0.8rem; color:var(--text-muted); line-height:1.6;">Camera + ultrasonic/IR data fused to assign urgency scores to detected threats.</p>
+                            </div>
+                        </div>
+                        <!-- arrow right → -->
+                        <div style="grid-column:2; grid-row:5; display:flex; align-items:center; justify-content:center;">
+                            <svg width="32" height="16" viewBox="0 0 32 16" fill="none"><path d="M2 8h24M18 2l8 6-8 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/></svg>
+                        </div>
+                        <!-- ── STEP 06 ── -->
+                        <div style="grid-column:3; grid-row:5; display:flex; align-items:stretch;">
+                            <div style="flex:1; border:1px solid var(--border-light); border-radius:10px; padding:1.25rem 1.5rem; background:var(--bg-glass); display:flex; flex-direction:column; gap:0.35rem;">
+                                <div style="display:flex; align-items:center; gap:0.75rem;">
+                                    <span style="font-family:'Space Mono',monospace; font-size:0.65rem; color:var(--text-muted); background:var(--bg-elevated); padding:0.2rem 0.5rem; border-radius:4px;">06</span>
+                                    <span style="font-size:0.95rem; font-weight:600; color:var(--text-primary);">Speech Output</span>
+                                    <span style="margin-left:auto; font-family:'Space Mono',monospace; font-size:0.68rem; color:var(--text-muted);">eSpeak NG</span>
+                                </div>
+                                <p style="margin:0; font-size:0.8rem; color:var(--text-muted); line-height:1.6;">High-priority alerts converted to audio via a non-blocking threaded TTS pipeline.</p>
+                            </div>
+                        </div>
+
+                        <!-- down arrow under col 3 -->
+                        <div style="grid-column:3; grid-row:6; display:flex; align-items:center; justify-content:center; padding:0.6rem 0;">
+                            <svg width="16" height="28" viewBox="0 0 16 28" fill="none"><path d="M8 2v22M2 18l6 8 6-8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/></svg>
+                        </div>
+
+                        <!-- ── STEP 07: loop back ── spans both cols -->
+                        <div style="grid-column:1 / -1; grid-row:7;">
+                            <div style="border:1px solid var(--border-medium); border-radius:10px; padding:1.25rem 1.5rem; background:var(--bg-glass-hover); display:flex; align-items:center; gap:1.5rem;">
+                                <span style="font-family:'Space Mono',monospace; font-size:0.65rem; color:var(--text-muted); background:var(--bg-elevated); padding:0.2rem 0.5rem; border-radius:4px; white-space:nowrap;">↺ loop</span>
+                                <div>
+                                    <span style="font-size:0.95rem; font-weight:600; color:var(--text-primary);">Continuous Loop</span>
+                                    <p style="margin:0.25rem 0 0; font-size:0.8rem; color:var(--text-muted); line-height:1.6;">Cycle repeats instantly — fully offline, no external dependency, running indefinitely on-device.</p>
+                                </div>
+                                <span style="margin-left:auto; font-family:'Space Mono',monospace; font-size:0.8rem; color:var(--text-muted); white-space:nowrap;">∞ offline</span>
+                            </div>
+                        </div>
+
+                    </div><!-- end flowchart grid -->
+                </div>
+            </section>
+
+        </div><!-- end scrollable-page -->
+    </main>
+
+    <script src="eye-animation.js"></script>
+    <script src="script.js"></script>
+    <script src="spa-router.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.reveal-up').forEach((el, i) => {
+                setTimeout(() => el.classList.add('active'), i * 60);
+            });
+            document.querySelector('.scrollable-page').classList.add('visible');
+        });
+        document.addEventListener('spa-page-loaded', () => {
+            document.querySelectorAll('.reveal-up').forEach((el, i) => {
+                el.classList.remove('active');
+                setTimeout(() => el.classList.add('active'), i * 60);
+            });
+            const slide = document.querySelector('.scrollable-page');
+            if (slide) slide.classList.add('visible');
+        });
+    </script>
+    <canvas id="grid-canvas" class="grid-background"></canvas>
+    <script src="grid-background.js"></script>
+</body>
+</html>

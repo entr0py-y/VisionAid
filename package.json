@@ -1,0 +1,21 @@
+{
+  "name": "visionaidcat",
+  "version": "1.0.0",
+  "description": "Smart Wearable Assistive Device for Visually Impaired People - College Major Project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "assistive-technology",
+    "accessibility",
+    "visually-impaired",
+    "AI",
+    "wearable"
+  ],
+  "author": "Student Project",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

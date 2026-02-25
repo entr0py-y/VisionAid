@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Smart Wearable Assistive Device for Visually Impaired People - An AI-powered solution for independent navigation" />
+    <title>Vision AID — Smart Wearable Assistive Device</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <nav class="navbar" aria-label="Primary">
+        <div class="nav-container">
+          <a href="#hero" class="nav-logo">
+            <img src="logo.png" alt="Smart Vision Aid Logo" class="logo-icon" />
+          </a>
+          <ul class="nav-menu">
+            <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+            <li><a href="#problem" class="nav-link" data-section="problem">Problem</a></li>
+            <li><a href="#solution" class="nav-link" data-section="solution">Solution</a></li>
+            <li><a href="#usp-roadmap" class="nav-link" data-section="usp-roadmap">USP &amp; Roadmap</a></li>
+            <li><a href="#feasibility" class="nav-link" data-section="feasibility">Feasibility</a></li>
+            <li><a href="#team" class="nav-link" data-section="team">Team</a></li>
+          </ul>
+          <button type="button" id="settings-toggle" class="settings-toggle" aria-haspopup="dialog" aria-expanded="false" aria-controls="settings-panel" aria-label="Settings">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+
+      <!-- ═══════════════════════════════════════════════════════════
+           SECTION 1: HERO (unchanged)
+           ═══════════════════════════════════════════════════════════ -->
+      <section id="hero" class="hero hero-fullpage" role="region" aria-labelledby="hero-title" aria-label="Overview">
+        <div class="hero-background">
+          <canvas id="eye-canvas"></canvas>
+          <div class="hero-gradient"></div>
+        </div>
+        <div class="container">
+          <div class="hero-content">
+            <div style="opacity: 0; animation: heroReveal 2.2s cubic-bezier(0.25, 1, 0.3, 1) forwards;">
+              <h1 class="display-title" style="margin-bottom: 0.5rem; font-size: clamp(1.75rem, 3.5vw, 3.15rem);">Vision Aid</h1>
+            </div>
+            <h1 id="hero-title" class="hero-title" style="opacity: 0; animation: heroReveal 2.2s cubic-bezier(0.25, 1, 0.3, 1) 0.2s forwards;">
+              Smart Wearable Assistive Device for Visually Impaired People
+            </h1>
+          </div>
+        </div>
+        <!-- Scroll indicator -->
+        <a href="#problem" class="scroll-indicator" aria-label="Scroll to explore">
+          <div class="scroll-indicator__mouse"></div>
+          <span class="scroll-indicator__text">Scroll to Explore</span>
+        </a>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════════
+           SECTION 2: PROBLEM (unchanged)
+           ═══════════════════════════════════════════════════════════ -->
+      <section id="problem" class="page-slide" style="padding-bottom: 0;">
+        <div class="content-center">
+          <div class="architectural-grid">
+            <div class="grid-col-12 reveal-up">
+              <h2 class="display-title">The Challenge</h2>
+              <p class="display-subtitle">285 million people worldwide navigate a world not designed for them. The core challenge is not just impaired vision, but the loss of independent agency.</p>
+            </div>
+          </div>
+        </div>
+        <div class="world-context reveal-fade-up">
+          <div class="number-text-stack">
+            <div class="bg-number parallax-slow">285,000,000</div>
+            <p class="context-text">A world built on visual assumptions becomes an invisible maze. Street signs, digital interfaces, social cues—all designed for eyes that see. Every journey demands constant vigilance, every interaction requires assistance, and independence becomes a privilege rather than a right.</p>
+          </div>
+        </div>
+        <div class="breakdown-section">
+          <div class="breakdown-item reveal-fade-up">
+            <div class="icon-minimal"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+            <div class="breakdown-content">
+              <h3>Navigation Difficulties</h3>
+              <p>Unfamiliar environments pose constant risks. Collisions with obstacles, uneven surfaces, and traffic create a perpetual mental load.</p>
+              <ul class="subpoints">
+                <li class="reveal-fade-up delay-1">Unpredictable terrain changes without warning</li>
+                <li class="reveal-fade-up delay-2">No real-time awareness of approaching vehicles</li>
+                <li class="reveal-fade-up delay-3">Indoor navigation requires memorization or assistance</li>
+              </ul>
+            </div>
+          </div>
+          <div class="breakdown-item reveal-fade-up delay-1">
+            <div class="icon-minimal"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <div class="breakdown-content">
+              <h3>Information Access</h3>
+              <p>Essential information—signs, menus, documents—remains locked behind a visual wall, requiring constant third-party assistance to decode.</p>
+              <ul class="subpoints">
+                <li class="reveal-fade-up delay-1">Street signs and emergency notices invisible</li>
+                <li class="reveal-fade-up delay-2">Menu boards and product labels inaccessible</li>
+                <li class="reveal-fade-up delay-3">Digital interfaces often poorly optimized</li>
+              </ul>
+            </div>
+          </div>
+          <div class="breakdown-item reveal-fade-up delay-2">
+            <div class="icon-minimal"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+            <div class="breakdown-content">
+              <h3>Limited Independence</h3>
+              <p>Reliance on others for simple daily tasks erodes autonomy. The inability to move freely without a guide restricts personal freedom.</p>
+              <ul class="subpoints">
+                <li class="reveal-fade-up delay-1">Simple errands become complex operations</li>
+                <li class="reveal-fade-up delay-2">Travel planning requires extensive preparation</li>
+                <li class="reveal-fade-up delay-3">Spontaneous decisions often impossible</li>
+              </ul>
+            </div>
+          </div>
+          <div class="breakdown-item reveal-fade-up delay-3">
+            <div class="icon-minimal"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg></div>
+            <div class="breakdown-content">
+              <h3>Social Isolation</h3>
+              <p>The difficulty in recognizing faces and reading social cues creates an invisible barrier to participation in community life.</p>
+              <ul class="subpoints">
+                <li class="reveal-fade-up delay-1">Face recognition requires verbal confirmation</li>
+                <li class="reveal-fade-up delay-2">Body language and expressions remain hidden</li>
+                <li class="reveal-fade-up delay-3">Group conversations difficult to follow</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════════
+           SECTION 3: SOLUTION
+           ═══════════════════════════════════════════════════════════ -->
+      <section id="solution" class="scroll-section" style="padding: 6rem 0 5rem;">
+        <div class="content-center">
+          <div class="architectural-grid focus-grid">
+            <div class="grid-col-12 reveal-blur" style="margin-bottom: 2rem;">
+              <h2 class="display-title">The Solution</h2>
+              <p class="display-subtitle">Vision AID is a hybrid edge–mobile–cloud assistive intelligence system — designed for real-world independence.</p>
+            </div>
+            <div class="grid-col-4 reveal-up delay-100">
+              <div class="hw-card" style="flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.75rem; height: 100%;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                  <h4 style="font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin: 0;">Edge Layer</h4>
+                </div>
+                <h3 style="font-size: 1.15rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.5rem 0;">Raspberry Pi</h3>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem;">
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Real-time YOLO detection</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Sensor fusion</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Distance estimation</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Low-latency TTS</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Offline processing</li>
+                </ul>
+              </div>
+            </div>
+            <div class="grid-col-4 reveal-up delay-200">
+              <div class="hw-card" style="flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.75rem; height: 100%;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg>
+                  <h4 style="font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin: 0;">Mobile Layer</h4>
+                </div>
+                <h3 style="font-size: 1.15rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.5rem 0;">Android Companion</h3>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem;">
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>GPS navigation</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Cloud sync</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Emergency SMS</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>OTA updates</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Risk dashboard</li>
+                </ul>
+              </div>
+            </div>
+            <div class="grid-col-4 reveal-up delay-300">
+              <div class="hw-card" style="flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.75rem; height: 100%;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+                  <h4 style="font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin: 0;">Cloud Layer</h4>
+                </div>
+                <h3 style="font-size: 1.15rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.5rem 0;">Intelligence Backend</h3>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem;">
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Encrypted backup</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Analytics</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Model updates</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Fleet management</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Long-term optimization</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- ═══════════════════════════════════════════════════════════
+           SECTION 4: PRODUCT CAPABILITIES
+           ═══════════════════════════════════════════════════════════ -->
+      <section id="capabilities" class="scroll-section" style="padding: 5rem 0;">
+        <div class="content-center">
+          <h2 class="display-title reveal-blur" style="margin-bottom: 0.5rem;">Product Capabilities</h2>
+          <p class="display-subtitle reveal-up delay-100" style="margin-bottom: 2.5rem;">Six core intelligence systems working in unison to deliver real-world assistive performance.</p>
+          <div class="architectural-grid focus-grid feature-grid-enhanced">
+            <article class="grid-col-4 minimal-card feature-item reveal-up delay-100">
+              <h3 class="feature-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" style="flex-shrink:0;"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/></svg>
+                <span>Intelligent Navigation</span>
+              </h3>
+              <p class="feature-description">Real-time path guidance using sensor fusion and object detection. Identifies safe corridors, detects obstacles at multiple body levels, and provides proactive spatial audio cues.</p>
+            </article>
+            <article class="grid-col-4 minimal-card feature-item reveal-up delay-200">
+              <h3 class="feature-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" style="flex-shrink:0;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                <span>Real-Time Safety Awareness</span>
+              </h3>
+              <p class="feature-description">Continuous environmental scanning with YOLO detection. Identifies people, vehicles, stairs, and hazards in real time — no cloud round-trip required.</p>
+            </article>
+            <article class="grid-col-4 minimal-card feature-item reveal-up delay-300">
+              <h3 class="feature-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" style="flex-shrink:0;"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                <span>Adaptive Alerts</span>
+              </h3>
+              <p class="feature-description">Smart priority logic filters noise from signal. Alerts are context-aware — verbosity, urgency, and frequency adapt dynamically to environment and situation.</p>
+            </article>
+            <article class="grid-col-4 minimal-card feature-item reveal-up delay-100">
+              <h3 class="feature-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" style="flex-shrink:0;"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <span>Offline-First Privacy</span>
+              </h3>
+              <p class="feature-description">All core processing runs on-device. No data leaves the hardware without consent. Full functionality in zero-network environments — privacy by architecture, not policy.</p>
+            </article>
+            <article class="grid-col-4 minimal-card feature-item reveal-up delay-200">
+              <h3 class="feature-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" style="flex-shrink:0;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.99 16.92z"/></svg>
+                <span>Emergency Response System</span>
+              </h3>
+              <p class="feature-description">Detects distress signals and triggers automatic emergency SMS with GPS coordinates via the companion app. Caregiver alerts without user action required.</p>
+            </article>
+            <article class="grid-col-4 minimal-card feature-item reveal-up delay-300">
+              <h3 class="feature-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" style="flex-shrink:0;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                <span>Context-Aware Announcements</span>
+              </h3>
+              <p class="feature-description">Objects are announced intelligently — not everything, only what matters. The system understands scene context to eliminate audio fatigue and deliver useful information.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- ═══════════════════════════════════════════════════════════
+           SECTION 5: TECHNOLOGY STACK
+           ═══════════════════════════════════════════════════════════ -->
+      <section id="tech-stack" class="scroll-section" style="padding: 5rem 0;">
+        <div class="content-center">
+          <div style="margin-bottom: 2.5rem;" class="reveal-blur">
+            <h2 class="display-title" style="margin-bottom: 0.6rem;">Technology Stack</h2>
+            <p class="display-subtitle" style="margin: 0;">Purpose-built hardware and open-source software running entirely on-device.</p>
+          </div>
+          <div class="tech-stack-grid focus-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: stretch;">
+            <!-- HARDWARE -->
+            <div class="tech-card reveal-up delay-100" style="border: 1px solid var(--border-light); border-radius: 10px; overflow: hidden; background: var(--bg-glass);">
+              <div style="padding: 1.5rem 1.75rem; border-bottom: 1px solid var(--border-subtle);"><p style="font-size: 0.72rem; font-family: 'Space Mono', monospace; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 0.35rem;">physical components</p><h3 style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 0;">Hardware</h3></div>
+              <div>
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);"><span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary);">Raspberry Pi 4B</span><span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); margin-left: 1rem;">compute unit</span></div>
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);"><span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary);">Camera Module</span><span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); margin-left: 1rem;">vision input</span></div>
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);"><span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary);">Ultrasonic Sensors</span><span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); margin-left: 1rem;">depth sensing</span></div>
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);"><span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary);">Battery System</span><span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); margin-left: 1rem;">portable power</span></div>
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem;"><span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary);">Audio Output</span><span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); margin-left: 1rem;">speech delivery</span></div>
+              </div>
+            </div>
+            <!-- SOFTWARE -->
+            <div class="tech-card reveal-up delay-200" style="border: 1px solid var(--border-light); border-radius: 10px; overflow: hidden; background: var(--bg-glass);">
+              <div style="padding: 1.5rem 1.75rem; border-bottom: 1px solid var(--border-subtle);"><p style="font-size: 0.72rem; font-family: 'Space Mono', monospace; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 0.35rem;">software stack</p><h3 style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 0;">Software</h3></div>
+              <div>
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);"><span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary);">Python</span><span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); margin-left: 1rem;">core language</span></div>
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);"><span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary);">OpenCV</span><span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); margin-left: 1rem;">vision processing</span></div>
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);"><span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary);">YOLO</span><span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); margin-left: 1rem;">object detection</span></div>
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);"><span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary);">eSpeak NG</span><span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); margin-left: 1rem;">speech output</span></div>
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem;"><span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary);">Vosk</span><span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); margin-left: 1rem;">voice commands</span></div>
+              </div>
+            </div>
+            <!-- AI & INTELLIGENCE -->
+            <div class="tech-card reveal-up delay-300" style="border: 1px solid var(--border-light); border-radius: 10px; overflow: hidden; background: var(--bg-glass);">
+              <div style="padding: 1.5rem 1.75rem; border-bottom: 1px solid var(--border-subtle);"><p style="font-size: 0.72rem; font-family: 'Space Mono', monospace; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 0.35rem;">intelligent systems</p><h3 style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 0;">AI &amp; Intelligence</h3></div>
+              <div>
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);"><span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary);">Computer Vision</span><span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); margin-left: 1rem;">scene understanding</span></div>
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);"><span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary);">Hybrid AI Routing</span><span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); margin-left: 1rem;">edge / cloud</span></div>
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);"><span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary);">Sensor Fusion</span><span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); margin-left: 1rem;">camera + depth</span></div>
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem; border-bottom: 1px solid var(--border-subtle);"><span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary);">Risk Scoring</span><span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); margin-left: 1rem;">priority logic</span></div>
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.75rem;"><span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary);">Speech Pipeline</span><span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); margin-left: 1rem;">non-blocking</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- ═══════════════════════════════════════════════════════════
+           SECTION 6: ARCHITECTURE FLOW
+           ═══════════════════════════════════════════════════════════ -->
+      <section id="architecture" class="scroll-section" style="padding: 4rem 0 5rem;">
+        <div class="content-center">
+          <div class="reveal-blur" style="margin-bottom: 3rem;">
+            <h2 class="display-title" style="margin-bottom: 0.6rem;">Architecture Flow</h2>
+            <p class="display-subtitle" style="margin: 0;">A deterministic, offline-first processing loop. Every perception cycle completes on-device — input to speech in milliseconds.</p>
+          </div>
+          <div class="reveal-scale delay-100" style="display: grid; grid-template-columns: 1fr 56px 1fr; gap: 0; max-width: 860px; margin: 0 auto;">
+            <!-- STEP 01 -->
+            <div style="grid-column:1; grid-row:1; display:flex; align-items:stretch;"><div style="flex:1; border:1px solid var(--border-light); border-radius:10px; padding:1.25rem 1.5rem; background:var(--bg-glass); display:flex; flex-direction:column; gap:0.35rem;"><div style="display:flex; align-items:center; gap:0.75rem;"><span style="font-family:'Space Mono',monospace; font-size:0.65rem; color:var(--text-muted); background:var(--bg-elevated); padding:0.2rem 0.5rem; border-radius:4px;">01</span><span style="font-size:0.95rem; font-weight:600; color:var(--text-primary);">Camera Input</span><span style="margin-left:auto; font-family:'Space Mono',monospace; font-size:0.68rem; color:var(--text-muted);">30fps</span></div><p style="margin:0; font-size:0.8rem; color:var(--text-muted); line-height:1.6;">Continuous video frames captured from the RPi camera module at 30fps.</p></div></div>
+            <div style="grid-column:2; grid-row:1; display:flex; align-items:center; justify-content:center;"><svg width="32" height="16" viewBox="0 0 32 16" fill="none"><path d="M2 8h24M18 2l8 6-8 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/></svg></div>
+            <!-- STEP 02 -->
+            <div style="grid-column:3; grid-row:1; display:flex; align-items:stretch;"><div style="flex:1; border:1px solid var(--border-light); border-radius:10px; padding:1.25rem 1.5rem; background:var(--bg-glass); display:flex; flex-direction:column; gap:0.35rem;"><div style="display:flex; align-items:center; gap:0.75rem;"><span style="font-family:'Space Mono',monospace; font-size:0.65rem; color:var(--text-muted); background:var(--bg-elevated); padding:0.2rem 0.5rem; border-radius:4px;">02</span><span style="font-size:0.95rem; font-weight:600; color:var(--text-primary);">Edge Processing</span><span style="margin-left:auto; font-family:'Space Mono',monospace; font-size:0.68rem; color:var(--text-muted);">OpenCV</span></div><p style="margin:0; font-size:0.8rem; color:var(--text-muted); line-height:1.6;">Frame preprocessing, resizing, and normalisation done on-device before inference.</p></div></div>
+            <div style="grid-column:3; grid-row:2; display:flex; align-items:center; justify-content:center; padding:0.6rem 0;"><svg width="16" height="28" viewBox="0 0 16 28" fill="none"><path d="M8 2v22M2 18l6 8 6-8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/></svg></div>
+            <!-- STEP 03 -->
+            <div style="grid-column:3; grid-row:3; display:flex; align-items:stretch;"><div style="flex:1; border:1px solid var(--border-light); border-radius:10px; padding:1.25rem 1.5rem; background:var(--bg-glass); display:flex; flex-direction:column; gap:0.35rem;"><div style="display:flex; align-items:center; gap:0.75rem;"><span style="font-family:'Space Mono',monospace; font-size:0.65rem; color:var(--text-muted); background:var(--bg-elevated); padding:0.2rem 0.5rem; border-radius:4px;">03</span><span style="font-size:0.95rem; font-weight:600; color:var(--text-primary);">Object Detection</span><span style="margin-left:auto; font-family:'Space Mono',monospace; font-size:0.68rem; color:var(--text-muted);">YOLO</span></div><p style="margin:0; font-size:0.8rem; color:var(--text-muted); line-height:1.6;">YOLO model identifies objects, people, and hazards in real time — no cloud needed.</p></div></div>
+            <div style="grid-column:2; grid-row:3; display:flex; align-items:center; justify-content:center;"><svg width="32" height="16" viewBox="0 0 32 16" fill="none"><path d="M30 8H6M14 2L6 8l8 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/></svg></div>
+            <!-- STEP 04 -->
+            <div style="grid-column:1; grid-row:3; display:flex; align-items:stretch;"><div style="flex:1; border:1px solid var(--border-light); border-radius:10px; padding:1.25rem 1.5rem; background:var(--bg-glass); display:flex; flex-direction:column; gap:0.35rem;"><div style="display:flex; align-items:center; gap:0.75rem;"><span style="font-family:'Space Mono',monospace; font-size:0.65rem; color:var(--text-muted); background:var(--bg-elevated); padding:0.2rem 0.5rem; border-radius:4px;">04</span><span style="font-size:0.95rem; font-weight:600; color:var(--text-primary);">Context Filtering</span><span style="margin-left:auto; font-family:'Space Mono',monospace; font-size:0.68rem; color:var(--text-muted);">Priority Logic</span></div><p style="margin:0; font-size:0.8rem; color:var(--text-muted); line-height:1.6;">Smart filtering decides what matters — reducing noise and preventing alert fatigue.</p></div></div>
+            <div style="grid-column:1; grid-row:4; display:flex; align-items:center; justify-content:center; padding:0.6rem 0;"><svg width="16" height="28" viewBox="0 0 16 28" fill="none"><path d="M8 2v22M2 18l6 8 6-8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/></svg></div>
+            <!-- STEP 05 -->
+            <div style="grid-column:1; grid-row:5; display:flex; align-items:stretch;"><div style="flex:1; border:1px solid var(--border-light); border-radius:10px; padding:1.25rem 1.5rem; background:var(--bg-glass); display:flex; flex-direction:column; gap:0.35rem;"><div style="display:flex; align-items:center; gap:0.75rem;"><span style="font-family:'Space Mono',monospace; font-size:0.65rem; color:var(--text-muted); background:var(--bg-elevated); padding:0.2rem 0.5rem; border-radius:4px;">05</span><span style="font-size:0.95rem; font-weight:600; color:var(--text-primary);">Risk Scoring</span><span style="margin-left:auto; font-family:'Space Mono',monospace; font-size:0.68rem; color:var(--text-muted);">Sensor Fusion</span></div><p style="margin:0; font-size:0.8rem; color:var(--text-muted); line-height:1.6;">Camera + ultrasonic/IR data fused to assign urgency scores to detected threats.</p></div></div>
+            <div style="grid-column:2; grid-row:5; display:flex; align-items:center; justify-content:center;"><svg width="32" height="16" viewBox="0 0 32 16" fill="none"><path d="M2 8h24M18 2l8 6-8 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/></svg></div>
+            <!-- STEP 06 -->
+            <div style="grid-column:3; grid-row:5; display:flex; align-items:stretch;"><div style="flex:1; border:1px solid var(--border-light); border-radius:10px; padding:1.25rem 1.5rem; background:var(--bg-glass); display:flex; flex-direction:column; gap:0.35rem;"><div style="display:flex; align-items:center; gap:0.75rem;"><span style="font-family:'Space Mono',monospace; font-size:0.65rem; color:var(--text-muted); background:var(--bg-elevated); padding:0.2rem 0.5rem; border-radius:4px;">06</span><span style="font-size:0.95rem; font-weight:600; color:var(--text-primary);">Speech Output</span><span style="margin-left:auto; font-family:'Space Mono',monospace; font-size:0.68rem; color:var(--text-muted);">eSpeak NG</span></div><p style="margin:0; font-size:0.8rem; color:var(--text-muted); line-height:1.6;">High-priority alerts converted to audio via a non-blocking threaded TTS pipeline.</p></div></div>
+            <div style="grid-column:3; grid-row:6; display:flex; align-items:center; justify-content:center; padding:0.6rem 0;"><svg width="16" height="28" viewBox="0 0 16 28" fill="none"><path d="M8 2v22M2 18l6 8 6-8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/></svg></div>
+            <!-- STEP 07: loop -->
+            <div style="grid-column:1 / -1; grid-row:7;"><div style="border:1px solid var(--border-medium); border-radius:10px; padding:1.25rem 1.5rem; background:var(--bg-glass-hover); display:flex; align-items:center; gap:1.5rem;"><span style="font-family:'Space Mono',monospace; font-size:0.65rem; color:var(--text-muted); background:var(--bg-elevated); padding:0.2rem 0.5rem; border-radius:4px; white-space:nowrap;">↺ loop</span><div><span style="font-size:0.95rem; font-weight:600; color:var(--text-primary);">Continuous Loop</span><p style="margin:0.25rem 0 0; font-size:0.8rem; color:var(--text-muted); line-height:1.6;">Cycle repeats instantly — fully offline, no external dependency, running indefinitely on-device.</p></div><span style="margin-left:auto; font-family:'Space Mono',monospace; font-size:0.8rem; color:var(--text-muted); white-space:nowrap;">∞ offline</span></div></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- ═══════════════════════════════════════════════════════════
+           SECTION 7: USP & DIFFERENTIATION + BUSINESS + ROADMAP
+           ═══════════════════════════════════════════════════════════ -->
+      <section id="usp-roadmap" class="scroll-section" style="padding: 6rem 0 0;">
+
+        <!-- 7a: USP & Differentiation -->
+        <div class="content-center" style="padding-bottom: 5rem;">
+          <div class="architectural-grid focus-grid">
+            <div class="grid-col-12 reveal-blur" style="margin-bottom: 2.5rem;">
+              <h2 class="display-title">USP &amp; Differentiation</h2>
+              <p class="display-subtitle">What makes Vision AID fundamentally different — and better — than any existing alternative.</p>
+            </div>
+            <div class="grid-col-6 reveal-slide-left delay-100">
+              <div class="hw-card" style="padding: 2rem; height: 100%;">
+                <h3 style="font-size: 1rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-primary); margin: 0 0 1.5rem 0;">Why It's Different</h3>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.85rem;">
+                  <li style="display: flex; align-items: flex-start; gap: 0.75rem;"><span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--text-muted); min-width: 1.8rem; margin-top: 0.15rem;">01</span><div><span style="font-size: 0.92rem; font-weight: 500; color: var(--text-primary); display: block;">Fully Offline</span><span style="font-size: 0.82rem; color: var(--text-muted);">privacy-safe, zero connectivity dependency</span></div></li>
+                  <li style="display: flex; align-items: flex-start; gap: 0.75rem;"><span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--text-muted); min-width: 1.8rem; margin-top: 0.15rem;">02</span><div><span style="font-size: 0.92rem; font-weight: 500; color: var(--text-primary); display: block;">Privacy-First</span><span style="font-size: 0.82rem; color: var(--text-muted);">no data leaves the device without consent</span></div></li>
+                  <li style="display: flex; align-items: flex-start; gap: 0.75rem;"><span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--text-muted); min-width: 1.8rem; margin-top: 0.15rem;">03</span><div><span style="font-size: 0.92rem; font-weight: 500; color: var(--text-primary); display: block;">Low Latency</span><span style="font-size: 0.82rem; color: var(--text-muted);">on-device RPi inference, no cloud round-trip</span></div></li>
+                  <li style="display: flex; align-items: flex-start; gap: 0.75rem;"><span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--text-muted); min-width: 1.8rem; margin-top: 0.15rem;">04</span><div><span style="font-size: 0.92rem; font-weight: 500; color: var(--text-primary); display: block;">Modular</span><span style="font-size: 0.82rem; color: var(--text-muted);">plug-and-play modules, extensible by design</span></div></li>
+                  <li style="display: flex; align-items: flex-start; gap: 0.75rem;"><span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--text-muted); min-width: 1.8rem; margin-top: 0.15rem;">05</span><div><span style="font-size: 0.92rem; font-weight: 500; color: var(--text-primary); display: block;">Expandable</span><span style="font-size: 0.82rem; color: var(--text-muted);">cloud layer, mobile app, AI assistant planned</span></div></li>
+                  <li style="display: flex; align-items: flex-start; gap: 0.75rem;"><span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--text-muted); min-width: 1.8rem; margin-top: 0.15rem;">06</span><div><span style="font-size: 0.92rem; font-weight: 500; color: var(--text-primary); display: block;">Affordable</span><span style="font-size: 0.82rem; color: var(--text-muted);">accessible price point for mass adoption</span></div></li>
+                </ul>
+              </div>
+            </div>
+            <div class="grid-col-6 reveal-slide-right delay-200">
+              <div class="hw-card" style="padding: 2rem; height: 100%;">
+                <h3 style="font-size: 1rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-primary); margin: 0 0 1.5rem 0;">Competitive Advantage</h3>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.85rem;">
+                  <li style="display: flex; align-items: flex-start; gap: 0.75rem;"><span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--text-muted); min-width: 1.8rem; margin-top: 0.15rem;">01</span><div><span style="font-size: 0.92rem; font-weight: 500; color: var(--text-primary); display: block;">Hybrid Architecture</span><span style="font-size: 0.82rem; color: var(--text-muted);">edge-first with optional cloud intelligence</span></div></li>
+                  <li style="display: flex; align-items: flex-start; gap: 0.75rem;"><span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--text-muted); min-width: 1.8rem; margin-top: 0.15rem;">02</span><div><span style="font-size: 0.92rem; font-weight: 500; color: var(--text-primary); display: block;">Edge Autonomy</span><span style="font-size: 0.82rem; color: var(--text-muted);">no connectivity required, ever</span></div></li>
+                  <li style="display: flex; align-items: flex-start; gap: 0.75rem;"><span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--text-muted); min-width: 1.8rem; margin-top: 0.15rem;">03</span><div><span style="font-size: 0.92rem; font-weight: 500; color: var(--text-primary); display: block;">Cloud Scalability</span><span style="font-size: 0.82rem; color: var(--text-muted);">fleet model updates &amp; analytics when connected</span></div></li>
+                  <li style="display: flex; align-items: flex-start; gap: 0.75rem;"><span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--text-muted); min-width: 1.8rem; margin-top: 0.15rem;">04</span><div><span style="font-size: 0.92rem; font-weight: 500; color: var(--text-primary); display: block;">Intelligent Routing</span><span style="font-size: 0.82rem; color: var(--text-muted);">context-aware alert filtering and priority</span></div></li>
+                  <li style="display: flex; align-items: flex-start; gap: 0.75rem;"><span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--text-muted); min-width: 1.8rem; margin-top: 0.15rem;">05</span><div><span style="font-size: 0.92rem; font-weight: 500; color: var(--text-primary); display: block;">Production-Ready Design</span><span style="font-size: 0.82rem; color: var(--text-muted);">deployable today, not just a prototype</span></div></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- 7b: Business Model -->
+        <div class="content-center" style="padding: 5rem 0;">
+          <div class="architectural-grid focus-grid">
+            <div class="grid-col-12 reveal-blur" style="margin-bottom: 2.5rem;">
+              <h2 class="display-title">Business Model &amp; Deployment</h2>
+              <p class="display-subtitle">A sustainable distribution strategy built on institutional channels, low cost, and real impact.</p>
+            </div>
+            <div class="grid-col-4 reveal-up delay-100">
+              <div class="hw-card" style="flex-direction: column; align-items: flex-start; gap: 0.6rem; padding: 1.75rem; height: 100%;">
+                <h3 style="font-size: 1rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-primary); margin: 0 0 1rem 0;">Target Users</h3>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.7rem; width: 100%;">
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Visually impaired individuals</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>NGOs</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Healthcare centers</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Government accessibility programs</li>
+                </ul>
+              </div>
+            </div>
+            <div class="grid-col-4 reveal-up delay-200">
+              <div class="hw-card" style="flex-direction: column; align-items: flex-start; gap: 0.6rem; padding: 1.75rem; height: 100%;">
+                <h3 style="font-size: 1rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-primary); margin: 0 0 1rem 0;">Revenue</h3>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.7rem; width: 100%;">
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Device sales</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Institutional supply</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Optional premium services</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Fleet deployments</li>
+                </ul>
+              </div>
+            </div>
+            <div class="grid-col-4 reveal-up delay-300">
+              <div class="hw-card" style="flex-direction: column; align-items: flex-start; gap: 0.6rem; padding: 1.75rem; height: 100%;">
+                <h3 style="font-size: 1rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-primary); margin: 0 0 1rem 0;">Cost Advantage</h3>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.7rem; width: 100%;">
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Open-source stack</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Affordable hardware</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--text-secondary);"><span style="width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0;"></span>Scalable production</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- 7c: Roadmap -->
+        <div class="content-center" style="padding: 5rem 0 6rem;">
+          <div class="architectural-grid focus-grid">
+            <div class="grid-col-12 reveal-blur" style="margin-bottom: 2.5rem;">
+              <h2 class="display-title">Development Roadmap</h2>
+              <p class="display-subtitle">Three phases from core MVP to full production deployment — each building on a working, proven foundation.</p>
+            </div>
+            <div class="grid-col-4 reveal-up delay-100">
+              <div class="hw-card" style="flex-direction: column; align-items: flex-start; padding: 1.75rem; height: 100%;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;"><span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; background: var(--bg-glass-hover); border: 1px solid var(--border-light); padding: 0.25rem 0.6rem; border-radius: 4px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em;">Phase 01</span><span style="font-size: 0.78rem; color: #4ade80; font-weight: 500;">✓ Implemented</span></div>
+                <h3 style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 0 0 1.25rem 0;">Currently Implemented</h3>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.65rem;">
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.875rem; color: var(--text-secondary);"><span style="width: 5px; height: 5px; border-radius: 50%; background: #4ade80; flex-shrink: 0;"></span>YOLO detection</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.875rem; color: var(--text-secondary);"><span style="width: 5px; height: 5px; border-radius: 50%; background: #4ade80; flex-shrink: 0;"></span>TTS</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.875rem; color: var(--text-secondary);"><span style="width: 5px; height: 5px; border-radius: 50%; background: #4ade80; flex-shrink: 0;"></span>Sensor integration</li>
+                </ul>
+              </div>
+            </div>
+            <div class="grid-col-4 reveal-up delay-200">
+              <div class="hw-card" style="flex-direction: column; align-items: flex-start; padding: 1.75rem; height: 100%;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;"><span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; background: var(--bg-glass-hover); border: 1px solid var(--border-light); padding: 0.25rem 0.6rem; border-radius: 4px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em;">Phase 02</span><span style="font-size: 0.78rem; color: #facc15; font-weight: 500;">⟳ In Progress</span></div>
+                <h3 style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 0 0 1.25rem 0;">In Progress</h3>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.65rem;">
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.875rem; color: var(--text-secondary);"><span style="width: 5px; height: 5px; border-radius: 50%; background: #facc15; flex-shrink: 0;"></span>AI assistant</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.875rem; color: var(--text-secondary);"><span style="width: 5px; height: 5px; border-radius: 50%; background: #facc15; flex-shrink: 0;"></span>Speech recognition</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.875rem; color: var(--text-secondary);"><span style="width: 5px; height: 5px; border-radius: 50%; background: #facc15; flex-shrink: 0;"></span>GPS navigation</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.875rem; color: var(--text-secondary);"><span style="width: 5px; height: 5px; border-radius: 50%; background: #facc15; flex-shrink: 0;"></span>System optimization</li>
+                </ul>
+              </div>
+            </div>
+            <div class="grid-col-4 reveal-up delay-300">
+              <div class="hw-card" style="flex-direction: column; align-items: flex-start; padding: 1.75rem; height: 100%;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;"><span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; background: var(--bg-glass-hover); border: 1px solid var(--border-light); padding: 0.25rem 0.6rem; border-radius: 4px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em;">Phase 03</span><span style="font-size: 0.78rem; color: var(--text-muted); font-weight: 500;">◌ Future</span></div>
+                <h3 style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 0 0 1.25rem 0;">Future Scope</h3>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.65rem;">
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.875rem; color: var(--text-secondary);"><span style="width: 5px; height: 5px; border-radius: 50%; background: var(--border-medium); flex-shrink: 0;"></span>Custom YOLO model</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.875rem; color: var(--text-secondary);"><span style="width: 5px; height: 5px; border-radius: 50%; background: var(--border-medium); flex-shrink: 0;"></span>Face recognition</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.875rem; color: var(--text-secondary);"><span style="width: 5px; height: 5px; border-radius: 50%; background: var(--border-medium); flex-shrink: 0;"></span>Emergency live tracking</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.875rem; color: var(--text-secondary);"><span style="width: 5px; height: 5px; border-radius: 50%; background: var(--border-medium); flex-shrink: 0;"></span>Cloud intelligence</li>
+                  <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.875rem; color: var(--text-secondary);"><span style="width: 5px; height: 5px; border-radius: 50%; background: var(--border-medium); flex-shrink: 0;"></span>Companion mobile app</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- ═══════════════════════════════════════════════════════════
+           SECTION 8: HEALTHCARE IMPACT + FEASIBILITY & RISK
+           ═══════════════════════════════════════════════════════════ -->
+      <section id="feasibility" class="scroll-section" style="padding: 6rem 0 0;">
+
+        <!-- 8a: Healthcare Impact -->
+        <div class="content-center" style="padding-bottom: 5rem;">
+          <h2 class="display-title reveal-blur" style="margin-bottom: 0.5rem;">Healthcare Impact</h2>
+          <p class="display-subtitle reveal-up delay-100" style="margin-bottom: 2.5rem;">Six dimensions of measurable real-world impact on the lives of visually impaired individuals.</p>
+          <div class="architectural-grid focus-grid feature-grid-enhanced">
+            <article class="grid-col-4 minimal-card feature-item reveal-up delay-100">
+              <h3 class="feature-title"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Safer Mobility</span></h3>
+              <p class="feature-description">Real-time hazard detection actively prevents accidents before they occur. Objects, obstacles, and dangers are identified and announced with enough lead time to react.</p>
+            </article>
+            <article class="grid-col-4 minimal-card feature-item reveal-up delay-200">
+              <h3 class="feature-title"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" style="flex-shrink:0;"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/></svg><span>Independent Navigation</span></h3>
+              <p class="feature-description">Enables fully independent movement without reliance on human guides. Users navigate public spaces, commute, and travel safely on their own terms.</p>
+            </article>
+            <article class="grid-col-4 minimal-card feature-item reveal-up delay-300">
+              <h3 class="feature-title"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" style="flex-shrink:0;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Reduced Anxiety</span></h3>
+              <p class="feature-description">Reduces travel-related stress, fear, and anxiety. Knowing hazards are monitored continuously gives users confidence to move through the world.</p>
+            </article>
+            <article class="grid-col-4 minimal-card feature-item reveal-up delay-100">
+              <h3 class="feature-title"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" style="flex-shrink:0;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Increased Dignity</span></h3>
+              <p class="feature-description">Reduces caregiver dependency and promotes equality. Independence restores dignity — users live on their own terms without constant reliance on others.</p>
+            </article>
+            <article class="grid-col-4 minimal-card feature-item reveal-up delay-200">
+              <h3 class="feature-title"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" style="flex-shrink:0;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>Real-World Usability</span></h3>
+              <p class="feature-description">Empowers users to commute, shop, and engage in social activities independently. The system acts as a reliable invisible guide, expanding the user's world.</p>
+            </article>
+            <article class="grid-col-4 minimal-card feature-item reveal-up delay-300">
+              <h3 class="feature-title"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg><span>Affordable Accessibility</span></h3>
+              <p class="feature-description">Safety and technology-driven inclusive lifestyle. Vision AID directly raises the floor for what's possible — not just assistive, but transformative.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- 8b: Feasibility & Risk -->
+        <div class="content-center" style="padding: 5rem 0 6rem;">
+          <div class="architectural-grid focus-grid">
+            <div class="grid-col-12 reveal-blur" style="margin-bottom: 2.5rem;">
+              <h2 class="display-title">Feasibility &amp; Risk Management</h2>
+              <p class="display-subtitle">The core system is already working. Every technical risk has a defined mitigation strategy.</p>
+            </div>
+            <div class="grid-col-6 reveal-slide-left delay-100">
+              <div class="hw-card" style="padding: 2rem; height: 100%;">
+                <h3 style="font-size: 1rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-primary); margin: 0 0 1.5rem 0;">Feasibility</h3>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.9rem;">
+                  <li style="display: flex; align-items: flex-start; gap: 0.85rem;"><span style="color: #4ade80; font-size: 1rem; line-height: 1.4; flex-shrink: 0;">✓</span><div><span style="font-size: 0.92rem; font-weight: 500; color: var(--text-primary); display: block;">Available Hardware</span><span style="font-size: 0.82rem; color: var(--text-muted);">RPi 4B, camera, sensors — all commercially available</span></div></li>
+                  <li style="display: flex; align-items: flex-start; gap: 0.85rem;"><span style="color: #4ade80; font-size: 1rem; line-height: 1.4; flex-shrink: 0;">✓</span><div><span style="font-size: 0.92rem; font-weight: 500; color: var(--text-primary); display: block;">Open-Source AI</span><span style="font-size: 0.82rem; color: var(--text-muted);">YOLO + OpenCV + eSpeak NG actively running on hardware</span></div></li>
+                  <li style="display: flex; align-items: flex-start; gap: 0.85rem;"><span style="color: #4ade80; font-size: 1rem; line-height: 1.4; flex-shrink: 0;">✓</span><div><span style="font-size: 0.92rem; font-weight: 500; color: var(--text-primary); display: block;">Edge Deployment Proven</span><span style="font-size: 0.82rem; color: var(--text-muted);">Full functionality without any network connection</span></div></li>
+                  <li style="display: flex; align-items: flex-start; gap: 0.85rem;"><span style="color: #4ade80; font-size: 1rem; line-height: 1.4; flex-shrink: 0;">✓</span><div><span style="font-size: 0.92rem; font-weight: 500; color: var(--text-primary); display: block;">Modular Architecture</span><span style="font-size: 0.82rem; color: var(--text-muted);">Each module independently testable and replaceable</span></div></li>
+                </ul>
+              </div>
+            </div>
+            <div class="grid-col-6 reveal-slide-right delay-200">
+              <div class="hw-card" style="padding: 2rem; height: 100%;">
+                <h3 style="font-size: 1rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-primary); margin: 0 0 1.5rem 0;">Challenges &amp; Mitigation</h3>
+                <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                  <div style="padding-bottom: 1.25rem; border-bottom: 1px solid var(--border-subtle);"><div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.4rem;"><span style="font-size: 0.75rem; background: rgba(250,204,21,0.12); color: #facc15; border: 1px solid rgba(250,204,21,0.25); padding: 0.15rem 0.5rem; border-radius: 3px; font-family: 'Space Mono', monospace; letter-spacing: 0.05em;">RISK</span><span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary);">Latency → lightweight models</span></div></div>
+                  <div style="padding-bottom: 1.25rem; border-bottom: 1px solid var(--border-subtle);"><div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.4rem;"><span style="font-size: 0.75rem; background: rgba(250,204,21,0.12); color: #facc15; border: 1px solid rgba(250,204,21,0.25); padding: 0.15rem 0.5rem; border-radius: 3px; font-family: 'Space Mono', monospace; letter-spacing: 0.05em;">RISK</span><span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary);">Accuracy → model tuning</span></div></div>
+                  <div style="padding-bottom: 1.25rem; border-bottom: 1px solid var(--border-subtle);"><div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.4rem;"><span style="font-size: 0.75rem; background: rgba(250,204,21,0.12); color: #facc15; border: 1px solid rgba(250,204,21,0.25); padding: 0.15rem 0.5rem; border-radius: 3px; font-family: 'Space Mono', monospace; letter-spacing: 0.05em;">RISK</span><span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary);">Hardware limits → optimization</span></div></div>
+                  <div style="padding-bottom: 1.25rem; border-bottom: 1px solid var(--border-subtle);"><div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.4rem;"><span style="font-size: 0.75rem; background: rgba(250,204,21,0.12); color: #facc15; border: 1px solid rgba(250,204,21,0.25); padding: 0.15rem 0.5rem; border-radius: 3px; font-family: 'Space Mono', monospace; letter-spacing: 0.05em;">RISK</span><span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary);">Cognitive overload → smart filtering</span></div></div>
+                  <div><div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.4rem;"><span style="font-size: 0.75rem; background: rgba(250,204,21,0.12); color: #facc15; border: 1px solid rgba(250,204,21,0.25); padding: 0.15rem 0.5rem; border-radius: 3px; font-family: 'Space Mono', monospace; letter-spacing: 0.05em;">RISK</span><span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary);">Scalability → optional cloud layer</span></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- ═══════════════════════════════════════════════════════════
+           SECTION 9: TEAM + LINKS
+           ═══════════════════════════════════════════════════════════ -->
+      <section id="team" class="scroll-section" style="padding: 6rem 0 0;">
+        <div class="content-center">
+          <div class="layered-section">
+            <div class="section-heading-glow"></div>
+            <div class="grid-col-12 reveal-blur" style="text-align: center; margin-bottom: 3rem;">
+              <h2 class="display-title" style="margin-bottom: 0.5rem;">The Team</h2>
+              <p class="display-subtitle" style="margin: 0 auto;">Innovators dedicated to accessible technology.</p>
+            </div>
+            <div class="team-grid-container focus-grid stagger-children">
+              <article class="team-member reveal-up delay-100">
+                <img src="team-images/mehul.jpeg" alt="Mehul Adlakha" class="member-image" loading="lazy">
+                <h3 class="member-name">Mehul Adlakha</h3>
+                <p class="member-role">Core Team Member</p>
+              </article>
+              <article class="team-member reveal-up delay-200">
+                <img src="team-images/pushkar.webp" alt="Pushkar Kumar Jha" class="member-image" loading="lazy">
+                <h3 class="member-name">Pushkar Kumar Jha</h3>
+                <p class="member-role">Core Team Member</p>
+              </article>
+              <article class="team-member reveal-up delay-300">
+                <img src="team-images/ayan-joshi.jpeg" alt="Ayan Joshi" class="member-image" loading="lazy">
+                <h3 class="member-name">Ayan Joshi</h3>
+                <p class="member-role">Core Team Member</p>
+              </article>
+              <article class="team-member reveal-up delay-100">
+                <img src="team-images/aditya-raj.jpg" alt="Aditya Raj" class="member-image" loading="lazy">
+                <h3 class="member-name">Aditya Raj</h3>
+                <p class="member-role">Core Team Member</p>
+              </article>
+              <article class="team-member reveal-up delay-200">
+                <img src="team-images/Raunak.jpeg" alt="Raunak" class="member-image" loading="lazy">
+                <h3 class="member-name">Raunak</h3>
+                <p class="member-role">Core Team Member</p>
+              </article>
+              <article class="team-member reveal-up delay-300">
+                <img src="team-images/daksha.jpeg" alt="Daksha" class="member-image" loading="lazy">
+                <h3 class="member-name">Daksha</h3>
+                <p class="member-role">Core Team Member</p>
+              </article>
+              <article class="team-member reveal-up delay-100">
+                <img src="team-images/Shashank-Mahariya.jpg" alt="Shashank" class="member-image" loading="lazy">
+                <h3 class="member-name">Shashank</h3>
+                <p class="member-role">Core Team Member</p>
+              </article>
+              <article class="team-member reveal-up delay-200">
+                <div class="member-image member-image-placeholder" aria-label="Sumit"></div>
+                <h3 class="member-name">Sumit</h3>
+                <p class="member-role">Core Team Member</p>
+              </article>
+              <article class="team-member reveal-up delay-300">
+                <div class="member-image member-image-placeholder" aria-label="Nirdesh"></div>
+                <h3 class="member-name">Nirdesh</h3>
+                <p class="member-role">Core Team Member</p>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-divider" style="margin-top: 3rem;"></div>
+
+        <!-- Links -->
+        <div class="content-center" style="padding: 5rem 0 6rem;">
+          <div class="architectural-grid">
+            <div class="grid-col-12 reveal-blur" style="text-align: center; margin-bottom: 3rem;">
+              <h2 class="display-title">Vision AID</h2>
+              <p class="display-subtitle" style="max-width: 540px; margin: 0 auto;">Empowering visually impaired individuals through safe, independent, AI-assisted mobility.</p>
+            </div>
+            <div class="grid-col-4 reveal-up delay-100">
+              <a href="https://github.com/MehulAdlakha/VISION-AID" target="_blank" rel="noopener noreferrer" class="hw-card" style="display: flex; align-items: center; gap: 1.25rem; padding: 1.5rem 1.75rem; text-decoration: none;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="flex-shrink:0; color: var(--text-muted);"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                <div><span style="display: block; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); font-family: 'Space Mono', monospace; margin-bottom: 0.2rem;">GitHub</span><span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary);">VISION-AID Repository</span></div>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="margin-left: auto; flex-shrink:0; color: var(--text-muted);"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+            <div class="grid-col-4 reveal-up delay-200">
+              <a href="https://youtube.com/@errorist_05?si=LaUL-vOTvJJD4DCb" target="_blank" rel="noopener noreferrer" class="hw-card" style="display: flex; align-items: center; gap: 1.25rem; padding: 1.5rem 1.75rem; text-decoration: none;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="flex-shrink:0; color: var(--text-muted);"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+                <div><span style="display: block; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); font-family: 'Space Mono', monospace; margin-bottom: 0.2rem;">YouTube</span><span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary);">Demo Video</span></div>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="margin-left: auto; flex-shrink:0; color: var(--text-muted);"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+            <div class="grid-col-4 reveal-up delay-300">
+              <a href="https://visionaid23.vercel.app" target="_blank" rel="noopener noreferrer" class="hw-card" style="display: flex; align-items: center; gap: 1.25rem; padding: 1.5rem 1.75rem; text-decoration: none;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="flex-shrink:0; color: var(--text-muted);"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <div><span style="display: block; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); font-family: 'Space Mono', monospace; margin-bottom: 0.2rem;">Website</span><span style="font-size: 0.9rem; font-weight: 500; color: var(--text-primary);">visionaid23.vercel.app</span></div>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="margin-left: auto; flex-shrink:0; color: var(--text-muted);"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+            <div class="grid-col-12 reveal-up delay-200" style="text-align: center; margin-top: 3rem;">
+              <p style="font-family: 'Space Mono', monospace; font-size: 0.78rem; color: var(--text-muted); letter-spacing: 0.08em;">Team GENKAI-ZERO &nbsp;·&nbsp; HackO'Clock 2.0 &nbsp;·&nbsp; HealthTech Track</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p class="footer-title">Smart Wearable Assistive Device for Visually Impaired People</p>
+          <p class="footer-subtitle">College Major Project &mdash; 2026</p>
+          <p class="footer-note">A student initiative for social impact through technology</p>
+          <p class="accessibility-note">This website is designed with accessibility and ease-of-use in mind for visually impaired users.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="eye-animation.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

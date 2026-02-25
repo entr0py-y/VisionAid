@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Architecture Flow - Vision AID">
+    <title>Architecture - Vision AID</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar" aria-label="Primary">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <img src="logo.png" alt="Vision AID Logo" class="logo-icon">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="problem.html" class="nav-link">Problem</a></li>
+                    <li><a href="solution.html" class="nav-link">Solution</a></li>
+                    <li><a href="features.html" class="nav-link">Capabilities</a></li>
+                    <li><a href="tech.html" class="nav-link">Tech Stack</a></li>
+                    <li><a href="architecture.html" class="nav-link active">Architecture</a></li>
+                    <li><a href="impact.html" class="nav-link">USP</a></li>
+                    <li><a href="business.html" class="nav-link">Business</a></li>
+                    <li><a href="roadmap.html" class="nav-link">Roadmap</a></li>
+                    <li><a href="healthcare.html" class="nav-link">Healthcare</a></li>
+                    <li><a href="feasibility.html" class="nav-link">Feasibility</a></li>
+                    <li><a href="team.html" class="nav-link">Team</a></li>
+                    <li><a href="links.html" class="nav-link">Links</a></li>
+                </ul>
+                <button type="button" id="settings-toggle" class="settings-toggle" aria-label="Settings"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="page-slide">
+            <div class="content-center">
+                <div class="architectural-grid">
+
+                    <!-- Left: Title + Description -->
+                    <div class="grid-col-5 reveal-up" style="display: flex; flex-direction: column; justify-content: center; padding-right: 2rem;">
+                        <h1 class="display-title">Architecture Flow</h1>
+                        <p class="display-subtitle" style="margin-bottom: 2rem;">A deterministic, offline-first processing loop. Every perception cycle completes on-device with zero dependency on external connectivity.</p>
+                        <div style="border-left: 2px solid var(--border-light); padding-left: 1.5rem; margin-top: 1rem;">
+                            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.75; margin: 0;">The system operates as a continuous closed loop. Input is captured, processed locally through the AI stack, and converted to speech — all within milliseconds. No internet required, no data transmitted, no latency from cloud calls.</p>
+                        </div>
+                    </div>
+
+                    <!-- Right: Flow Pipeline -->
+                    <div class="grid-col-7 reveal-up delay-200" style="display: flex; align-items: center; justify-content: center;">
+                        <div style="display: flex; flex-direction: column; gap: 0; width: 100%; max-width: 420px;">
+
+                            <!-- Step 1 -->
+                            <div style="display: flex; align-items: center; gap: 1.25rem; padding: 1rem 1.5rem; border: 1px solid var(--border-light); border-radius: 8px 8px 0 0; background: var(--bg-glass);">
+                                <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--text-muted); min-width: 2rem;">01</span>
+                                <span style="font-size: 0.95rem; font-weight: 500; color: var(--text-primary);">Camera Input</span>
+                                <span style="margin-left: auto; font-size: 0.75rem; color: var(--text-muted);">30fps</span>
+                            </div>
+                            <!-- Arrow -->
+                            <div style="display: flex; justify-content: center; padding: 0.2rem 0; border-left: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); background: transparent; margin-left: 0; ">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v8M2 7l4 4 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/></svg>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div style="display: flex; align-items: center; gap: 1.25rem; padding: 1rem 1.5rem; border: 1px solid var(--border-light); border-top: none; background: var(--bg-glass);">
+                                <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--text-muted); min-width: 2rem;">02</span>
+                                <span style="font-size: 0.95rem; font-weight: 500; color: var(--text-primary);">Edge Processing</span>
+                                <span style="margin-left: auto; font-size: 0.75rem; color: var(--text-muted);">OpenCV</span>
+                            </div>
+                            <div style="display: flex; justify-content: center; padding: 0.2rem 0; border-left: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle);">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v8M2 7l4 4 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/></svg>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div style="display: flex; align-items: center; gap: 1.25rem; padding: 1rem 1.5rem; border: 1px solid var(--border-light); border-top: none; background: var(--bg-glass);">
+                                <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--text-muted); min-width: 2rem;">03</span>
+                                <span style="font-size: 0.95rem; font-weight: 500; color: var(--text-primary);">Object Detection</span>
+                                <span style="margin-left: auto; font-size: 0.75rem; color: var(--text-muted);">YOLO</span>
+                            </div>
+                            <div style="display: flex; justify-content: center; padding: 0.2rem 0; border-left: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle);">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v8M2 7l4 4 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/></svg>
+                            </div>
+
+                            <!-- Step 4 -->
+                            <div style="display: flex; align-items: center; gap: 1.25rem; padding: 1rem 1.5rem; border: 1px solid var(--border-light); border-top: none; background: var(--bg-glass);">
+                                <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--text-muted); min-width: 2rem;">04</span>
+                                <span style="font-size: 0.95rem; font-weight: 500; color: var(--text-primary);">Context Filtering</span>
+                                <span style="margin-left: auto; font-size: 0.75rem; color: var(--text-muted);">Priority Logic</span>
+                            </div>
+                            <div style="display: flex; justify-content: center; padding: 0.2rem 0; border-left: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle);">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v8M2 7l4 4 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/></svg>
+                            </div>
+
+                            <!-- Step 5 -->
+                            <div style="display: flex; align-items: center; gap: 1.25rem; padding: 1rem 1.5rem; border: 1px solid var(--border-light); border-top: none; background: var(--bg-glass);">
+                                <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--text-muted); min-width: 2rem;">05</span>
+                                <span style="font-size: 0.95rem; font-weight: 500; color: var(--text-primary);">Risk Scoring</span>
+                                <span style="margin-left: auto; font-size: 0.75rem; color: var(--text-muted);">Sensor Fusion</span>
+                            </div>
+                            <div style="display: flex; justify-content: center; padding: 0.2rem 0; border-left: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle);">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v8M2 7l4 4 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/></svg>
+                            </div>
+
+                            <!-- Step 6 -->
+                            <div style="display: flex; align-items: center; gap: 1.25rem; padding: 1rem 1.5rem; border: 1px solid var(--border-light); border-top: none; background: var(--bg-glass);">
+                                <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--text-muted); min-width: 2rem;">06</span>
+                                <span style="font-size: 0.95rem; font-weight: 500; color: var(--text-primary);">Speech Output</span>
+                                <span style="margin-left: auto; font-size: 0.75rem; color: var(--text-muted);">eSpeak NG</span>
+                            </div>
+                            <div style="display: flex; justify-content: center; padding: 0.2rem 0; border-left: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle);">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v8M2 7l4 4 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/></svg>
+                            </div>
+
+                            <!-- Step 7 - Loop -->
+                            <div style="display: flex; align-items: center; gap: 1.25rem; padding: 1rem 1.5rem; border: 1px solid var(--border-medium); border-top: none; border-radius: 0 0 8px 8px; background: var(--bg-glass-hover);">
+                                <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--text-muted); min-width: 2rem;">↺</span>
+                                <span style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary);">Continuous Loop</span>
+                                <span style="margin-left: auto; font-size: 0.75rem; color: var(--text-muted);">∞ offline</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="eye-animation.js"></script>
+    <script src="script.js"></script>
+    <script src="spa-router.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.reveal-up').forEach((el, i) => {
+                setTimeout(() => el.classList.add('active'), i * 80);
+            });
+            document.querySelector('.page-slide').classList.add('visible');
+        });
+        document.addEventListener('spa-page-loaded', () => {
+            document.querySelectorAll('.reveal-up').forEach((el, i) => {
+                el.classList.remove('active');
+                setTimeout(() => el.classList.add('active'), i * 80);
+            });
+            const slide = document.querySelector('.page-slide');
+            if (slide) slide.classList.add('visible');
+        });
+    </script>
+    <canvas id="grid-canvas" class="grid-background"></canvas>
+    <script src="grid-background.js"></script>
+</body>
+</html>
